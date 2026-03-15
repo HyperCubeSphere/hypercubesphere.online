@@ -1,0 +1,43 @@
+# HyperCubeSphere
+
+> HyperCubeSphere is a security-first, engineer-led B2B technology consulting agency. We deliver strategic software solutions, AI innovation, and cybersecurity for forward-thinking enterprises.
+
+## Services
+- AI Engineering: Custom ML models, intelligent automation, NLP, computer vision, predictive analytics, and AI governance
+- Software Strategy: Architecture consulting, tech stack selection, system design, roadmap planning, and legacy modernization
+- Cybersecurity: Penetration testing, red teaming, zero-trust implementation, SOC 2 & ISO 27001 compliance, incident response
+- Cloud Architecture: Multi-cloud strategy, Kubernetes orchestration, Infrastructure as Code, migration planning, cost optimization
+- Data Platforms: Real-time pipelines, data mesh architecture, data warehouse design, analytics dashboards, data governance
+- Strategic Consulting: CTO advisory, digital transformation strategy, team augmentation, technical due diligence
+
+## Key Facts
+- Founded: 2021
+- Team size: 6 specialists
+- Projects delivered: 50+
+- Uptime SLA: 99.9%
+- Industries served: Financial Services, Healthcare, Defense & Government, Retail, Technology, Energy
+- Countries served: 12+
+- Certifications and compliance: Zero-Trust Architecture, ISO 27001, SOC 2 Type II, GDPR
+- Available in 14 languages: English, Romanian, German, French, Greek, Ukrainian, Spanish, Turkish, Estonian, Czech, Dutch, Swedish, Italian, Danish
+
+## Documentation
+- Home: https://hypercubesphere.online/en
+- Services: https://hypercubesphere.online/en/services
+- About: https://hypercubesphere.online/en/about
+- Team: https://hypercubesphere.online/en/team
+- Blog: https://hypercubesphere.online/en/blog
+- Contact: https://hypercubesphere.online/en/contact
+- Privacy Policy: https://hypercubesphere.online/en/privacy
+
+## Blog Posts
+- The Future of AI-Driven Security Operations: https://hypercubesphere.online/en/blog/future-of-ai-driven-security-operations
+- Zero-Trust Architecture — A Practical Implementation Guide: https://hypercubesphere.online/en/blog/zero-trust-architecture-practical-guide
+- Building Scalable Data Pipelines with Modern Tools: https://hypercubesphere.online/en/blog/building-scalable-data-pipelines
+- Strategic Software Architecture for Growing Startups: https://hypercubesphere.online/en/blog/strategic-software-architecture-startups
+- Cloud Cost Optimization — Lessons from 50+ Migrations: https://hypercubesphere.online/en/blog/cloud-cost-optimization-lessons
+- Why Every Enterprise Needs an AI Strategy in 2026: https://hypercubesphere.online/en/blog/every-enterprise-needs-ai-strategy
+
+## Contact
+- Website: https://hypercubesphere.online
+- Email: info@hypercubesphere.online
+- GitHub: https://github.com/HyperCubeSphere
