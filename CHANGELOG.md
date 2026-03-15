@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.0](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.3...v1.1.0) (2026-03-15)
+
+### 🍕 Features
+
+* add llm optimisation ([9d84625](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/9d84625a16d878645e7e799a42308e431234dc5d))
+* add multiple languages and default translations ([fe35506](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/fe35506c8dd04936ecd0a5a93621526f58cf3cb3))
+* make seo optimisations and add sitemap generation ([6d767bb](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/6d767bb6d65723bf3b74d64d0e06e004c6884056))
+
 ## [1.0.3](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.2...v1.0.3) (2026-03-15)
 
 ### 🔁 Continuous Integration
