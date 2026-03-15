@@ -1,10 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
 import ContactForm from '../components/ContactForm'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/contact')({
   component: ContactPage,
   head: () => ({
-    meta: [{ title: 'Contact — HyperCubeSphere' }],
+    ...seo({
+      title: 'Contact — HyperCubeSphere',
+      description: 'Get in touch with HyperCubeSphere. Start a conversation about AI, cybersecurity, cloud, or strategic software consulting.',
+      path: '/contact',
+    }),
   }),
 })
 

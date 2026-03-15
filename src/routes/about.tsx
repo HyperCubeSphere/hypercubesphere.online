@@ -1,10 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
 import StatBlock from '../components/StatBlock'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/about')({
   component: AboutPage,
   head: () => ({
-    meta: [{ title: 'About — HyperCubeSphere' }],
+    ...seo({
+      title: 'About — HyperCubeSphere',
+      description: 'Meet the team behind HyperCubeSphere. Engineers and strategists with decades of experience in enterprise technology, AI, and cybersecurity.',
+      path: '/about',
+    }),
   }),
 })
 

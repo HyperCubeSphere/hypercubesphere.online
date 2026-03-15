@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hypercubesphere.online/sitemap.xml

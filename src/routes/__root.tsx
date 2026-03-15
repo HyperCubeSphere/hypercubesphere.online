@@ -13,6 +13,9 @@ export const Route = createRootRoute({
       { title: 'HyperCubeSphere — Strategic Software, AI Innovation & Security' },
       { name: 'description', content: 'HyperCubeSphere delivers strategic software solutions, AI innovation, and cybersecurity for forward-thinking enterprises.' },
       { name: 'theme-color', content: '#08080c' },
+      { property: 'og:site_name', content: 'HyperCubeSphere' },
+      { property: 'og:locale', content: 'en_US' },
+      { name: 'twitter:card', content: 'summary' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },

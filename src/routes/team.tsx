@@ -1,10 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
 import TeamCard from '../components/TeamCard'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/team')({
   component: TeamPage,
   head: () => ({
-    meta: [{ title: 'Team — HyperCubeSphere' }],
+    ...seo({
+      title: 'Team — HyperCubeSphere',
+      description: 'Six specialists with decades of combined experience in AI, cybersecurity, cloud architecture, and enterprise software engineering.',
+      path: '/team',
+    }),
   }),
 })
 

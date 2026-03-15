@@ -1,12 +1,40 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { blogPosts } from '../data/blog-posts'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/blog/$slug')({
   component: BlogPostPage,
   head: ({ params }) => {
     const post = blogPosts.find((p) => p.slug === params.slug)
+    if (!post) {
+      return { meta: [{ title: 'Post Not Found — HyperCubeSphere' }] }
+    }
     return {
-      meta: [{ title: post ? `${post.title} — HyperCubeSphere` : 'Post Not Found' }],
+      ...seo({
+        title: `${post.title} — HyperCubeSphere`,
+        description: post.excerpt,
+        path: `/blog/${post.slug}`,
+        type: 'article',
+        article: {
+          publishedTime: new Date(post.date).toISOString().split('T')[0],
+          section: post.category,
+        },
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: new Date(post.date).toISOString().split('T')[0],
+          author: {
+            '@type': 'Organization',
+            name: 'HyperCubeSphere',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'HyperCubeSphere',
+          },
+        },
+      }),
     }
   },
 })

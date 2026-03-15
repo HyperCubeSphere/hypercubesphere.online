@@ -1,9 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/privacy')({
   component: PrivacyPage,
   head: () => ({
-    meta: [{ title: 'Privacy Policy — HyperCubeSphere' }],
+    ...seo({
+      title: 'Privacy Policy — HyperCubeSphere',
+      description: 'HyperCubeSphere privacy policy. Learn how we collect, use, and protect your personal information.',
+      path: '/privacy',
+    }),
   }),
 })
 

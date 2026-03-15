@@ -1,9 +1,29 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import ServiceCard from '../components/ServiceCard'
 import StatBlock from '../components/StatBlock'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
+  head: () => ({
+    ...seo({
+      title: 'HyperCubeSphere — Strategic Software, AI Innovation & Security',
+      description: 'HyperCubeSphere delivers strategic software solutions, AI innovation, and cybersecurity for forward-thinking enterprises.',
+      path: '/',
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'HyperCubeSphere',
+        url: 'https://hypercubesphere.online',
+        description: 'Security-first, engineer-led technology consulting agency offering AI, cybersecurity, cloud, data, and strategic advisory services to enterprises.',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'info@hypercubesphere.online',
+          contactType: 'customer service',
+        },
+      },
+    }),
+  }),
 })
 
 const services = [

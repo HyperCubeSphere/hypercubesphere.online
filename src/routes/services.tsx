@@ -1,10 +1,15 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import SectionHeader from '../components/SectionHeader'
+import { seo } from '../lib/seo'
 
 export const Route = createFileRoute('/services')({
   component: ServicesPage,
   head: () => ({
-    meta: [{ title: 'Services — HyperCubeSphere' }],
+    ...seo({
+      title: 'Services — HyperCubeSphere',
+      description: 'Full-spectrum technology services: AI engineering, software strategy, cybersecurity, cloud architecture, data platforms, and strategic consulting.',
+      path: '/services',
+    }),
   }),
 })
 
