@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.1](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.0...v1.0.1) (2026-03-15)
+
+### 🐛 Bug Fixes
+
+* correct issues and pr permissions to release actions ([4390b6d](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/4390b6d6b9ee40fdfd4bb57644742ed992ebc066))
+
 ## 1.0.0 (2026-03-15)
 
 ### 🍕 Features
