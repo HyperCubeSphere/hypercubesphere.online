@@ -14,7 +14,7 @@ const variants = {
 export default function StatBlock({ value, label, variant = 'default' }: StatBlockProps) {
   return (
     <div className={`border-3 p-6 glow-accent ${variants[variant]}`}>
-      <p className="font-mono text-3xl md:text-4xl font-extrabold">
+      <p className="font-mono text-3xl md:text-4xl font-extrabold tabular-nums">
         {value}
       </p>
       <p className="font-mono text-[11px] uppercase tracking-widest mt-1 font-semibold opacity-70">

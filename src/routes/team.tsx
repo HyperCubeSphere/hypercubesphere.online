@@ -61,7 +61,7 @@ function TeamPage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // Our Team
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
           The People Behind{' '}
           <span className="accent-highlight">The Code</span>
         </h1>
@@ -94,7 +94,7 @@ function TeamPage() {
         </p>
         <a
           href="mailto:careers@hypercubesphere.online"
-          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-colors hover:bg-transparent hover:text-accent"
+          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-[background-color,color] duration-200 hover:bg-transparent hover:text-accent touch-manipulation"
         >
           Get in Touch →
         </a>

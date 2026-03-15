@@ -9,7 +9,7 @@ export default function Footer() {
             <Link to="/" className="font-mono font-extrabold text-base tracking-widest uppercase block mb-2">
               HYPER<span className="text-accent">CUBE</span>SPHERE
             </Link>
-            <p className="font-mono text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider">
+            <p className="font-mono text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider" suppressHydrationWarning>
               © {new Date().getFullYear()} HyperCubeSphere. All rights reserved.
             </p>
           </div>
@@ -25,7 +25,7 @@ export default function Footer() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="font-mono text-xs uppercase tracking-wider text-muted-light dark:text-muted-dark hover:text-accent transition-colors"
+                className="font-mono text-xs uppercase tracking-wider text-muted-light dark:text-muted-dark hover:text-accent transition-[color] duration-200"
               >
                 {link.label}
               </Link>

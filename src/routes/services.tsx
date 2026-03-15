@@ -62,7 +62,7 @@ function ServicesPage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // Our Expertise
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
           Full-Spectrum Technology{' '}
           <span className="accent-highlight">Services</span>
         </h1>
@@ -78,7 +78,7 @@ function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.number}
-              className="border-3 border-border-light dark:border-border-dark p-8 md:p-10 -mt-[3px] first:mt-0 group transition-colors relative z-0 hover:z-10 hover:border-accent hover:bg-hover-light dark:hover:bg-hover-dark"
+              className="border-3 border-border-light dark:border-border-dark p-8 md:p-10 -mt-[3px] first:mt-0 group transition-[border-color,background-color] duration-200 relative z-0 hover:z-10 hover:border-accent hover:bg-hover-light dark:hover:bg-hover-dark"
             >
               <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8">
                 <div>
@@ -141,7 +141,7 @@ function ServicesPage() {
         </h2>
         <Link
           to="/contact"
-          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-colors hover:bg-transparent hover:text-accent"
+          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-[background-color,color] duration-200 hover:bg-transparent hover:text-accent touch-manipulation"
         >
           Let's Talk →
         </Link>

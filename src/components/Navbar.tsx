@@ -24,7 +24,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="font-mono text-[13px] font-semibold uppercase tracking-wider px-4 py-2 border-2 border-transparent transition-colors hover:text-accent hover:border-accent"
+              className="font-mono text-[13px] font-semibold uppercase tracking-wider px-4 py-2 border-2 border-transparent transition-[color,border-color] duration-200 hover:text-accent hover:border-accent"
               activeProps={{ className: 'text-accent border-accent' }}
             >
               {link.label}
@@ -32,7 +32,7 @@ export default function Navbar() {
           ))}
           <Link
             to="/contact"
-            className="font-mono text-[13px] font-bold uppercase tracking-wider px-5 py-2 bg-accent text-white border-2 border-accent transition-colors hover:bg-transparent hover:text-accent ml-2"
+            className="font-mono text-[13px] font-bold uppercase tracking-wider px-5 py-2 bg-accent text-white border-2 border-accent transition-[background-color,color] duration-200 hover:bg-transparent hover:text-accent ml-2 touch-manipulation"
           >
             Contact
           </Link>
@@ -43,8 +43,9 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden font-mono text-xl p-2 cursor-pointer"
-          aria-label="Toggle menu"
+          className="md:hidden font-mono text-xl p-2 cursor-pointer touch-manipulation"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
         >
           {open ? '✕' : '☰'}
         </button>
@@ -57,7 +58,7 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               onClick={() => setOpen(false)}
-              className="font-mono text-sm font-semibold uppercase tracking-wider py-2 border-b-2 border-border-light dark:border-border-dark transition-colors hover:text-accent"
+              className="font-mono text-sm font-semibold uppercase tracking-wider py-2 border-b-2 border-border-light dark:border-border-dark transition-[color] duration-200 hover:text-accent"
             >
               {link.label}
             </Link>

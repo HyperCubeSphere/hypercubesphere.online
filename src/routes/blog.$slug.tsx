@@ -42,7 +42,7 @@ function BlogPostPage() {
             {post.readTime}
           </span>
         </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4 max-w-3xl">
+        <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4 max-w-3xl text-balance">
           {post.title}
         </h1>
         <p className="font-mono text-sm text-muted-light dark:text-muted-dark">

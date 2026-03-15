@@ -33,6 +33,7 @@ html {
 html.dark {
   background-color: var(--color-bg-dark);
   color: var(--color-text-dark);
+  color-scheme: dark;
 }
 html.dark body {
   background-color: var(--color-bg-dark);
@@ -41,9 +42,40 @@ html.dark body {
 html.light {
   background-color: var(--color-bg-light);
   color: var(--color-text-light);
+  color-scheme: light;
 }
 html.light body {
   background-color: var(--color-bg-light);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background-color: var(--color-accent);
+  border: 3px solid var(--color-accent);
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Grid overlay */
@@ -67,12 +99,23 @@ html.light .grid-overlay {
   background-size: 80px 80px;
 }
 
+/* Focus-visible ring */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* Glow effect utility */
 .glow-accent {
   transition: box-shadow 0.2s ease;
 }
 .glow-accent:hover {
   box-shadow: 0 0 20px rgba(255, 107, 53, 0.25);
+}
+
+/* Tabular nums for stat displays */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
 
 /* Accent highlight inline */

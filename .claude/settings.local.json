@@ -33,7 +33,10 @@
       "mcp__plugin_playwright_playwright__browser_click",
       "Bash(mv /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/final-*.png /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/mockups/ 2>/dev/null; mv /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/progress-*.png /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/mockups/ 2>/dev/null)",
       "mcp__plugin_playwright_playwright__browser_hover",
-      "Bash(for f:*)"
+      "Bash(for f:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)"
     ]
   }
 }

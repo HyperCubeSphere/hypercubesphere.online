@@ -58,7 +58,7 @@ function PrivacyPage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // Legal
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 text-balance">
           Privacy Policy
         </h1>
         <p className="font-mono text-sm text-muted-light dark:text-muted-dark">

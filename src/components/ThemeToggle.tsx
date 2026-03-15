@@ -17,12 +17,14 @@ export default function ThemeToggle() {
     root.classList.remove('light', 'dark')
     root.classList.add(next)
     root.style.colorScheme = next
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (meta) meta.setAttribute('content', next === 'dark' ? '#08080c' : '#fffef5')
   }
 
   return (
     <button
       onClick={toggle}
-      className="font-mono text-xs uppercase tracking-wider border-2 border-current px-3 py-1.5 transition-colors hover:border-accent hover:text-accent cursor-pointer"
+      className="font-mono text-xs uppercase tracking-wider border-2 border-current px-3 py-1.5 transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? '// LIGHT' : '// DARK'}

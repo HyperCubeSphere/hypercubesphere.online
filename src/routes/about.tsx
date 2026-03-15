@@ -23,7 +23,7 @@ function AboutPage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // About Us
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
           Engineering the{' '}
           <span className="accent-highlight">Future</span>{' '}
           of Enterprise Technology

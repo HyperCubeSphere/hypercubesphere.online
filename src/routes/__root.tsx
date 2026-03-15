@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import appCss from '../styles.css?url'
 
-const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark')?stored:'dark';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(mode);root.style.colorScheme=mode;}catch(e){}})();`
+const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark')?stored:'dark';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(mode);root.style.colorScheme=mode;var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=mode==='dark'?'#08080c':'#fffef5';}catch(e){}})();`
 
 export const Route = createRootRoute({
   head: () => ({
@@ -12,6 +12,7 @@ export const Route = createRootRoute({
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { title: 'HyperCubeSphere — Strategic Software, AI Innovation & Security' },
       { name: 'description', content: 'HyperCubeSphere delivers strategic software solutions, AI innovation, and cybersecurity for forward-thinking enterprises.' },
+      { name: 'theme-color', content: '#08080c' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
@@ -31,10 +32,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body className="min-h-screen font-sans antialiased">
-        <div className="grid-overlay" />
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <div className="grid-overlay" aria-hidden="true" />
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-1">
+          <main id="main-content" className="flex-1">
             {children}
           </main>
           <Footer />

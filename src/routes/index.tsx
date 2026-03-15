@@ -34,7 +34,7 @@ function HomePage() {
             <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
               // Software × AI × Security
             </p>
-            <h1 className="text-4xl md:text-[54px] font-extrabold leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-4xl md:text-[54px] font-extrabold leading-[1.05] tracking-tight mb-6 text-balance">
               We Engineer{' '}
               <span className="accent-highlight">Bold</span>{' '}
               Digital Futures
@@ -45,13 +45,13 @@ function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/contact"
-                className="bg-accent text-white border-3 border-accent px-8 py-4 font-mono text-[13px] font-extrabold uppercase tracking-widest glow-accent transition-colors hover:bg-transparent hover:text-accent"
+                className="bg-accent text-white border-3 border-accent px-8 py-4 font-mono text-[13px] font-extrabold uppercase tracking-widest glow-accent transition-[background-color,color] duration-200 hover:bg-transparent hover:text-accent touch-manipulation"
               >
                 Work With Us →
               </Link>
               <Link
                 to="/services"
-                className="border-3 border-border-light dark:border-border-dark px-8 py-4 font-mono text-[13px] font-bold uppercase tracking-widest transition-colors hover:border-accent hover:text-accent"
+                className="border-3 border-border-light dark:border-border-dark px-8 py-4 font-mono text-[13px] font-bold uppercase tracking-widest transition-[border-color,color] duration-200 hover:border-accent hover:text-accent touch-manipulation"
               >
                 See Our Work
               </Link>
@@ -132,7 +132,7 @@ function HomePage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // Ready to Start?
         </p>
-        <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-6 max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-wider mb-6 max-w-2xl mx-auto text-balance">
           Let's Build Something{' '}
           <span className="accent-highlight">Extraordinary</span>
         </h2>
@@ -141,7 +141,7 @@ function HomePage() {
         </p>
         <Link
           to="/contact"
-          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-colors hover:bg-transparent hover:text-accent"
+          className="inline-block bg-accent text-white border-3 border-accent px-10 py-4 font-mono text-sm font-extrabold uppercase tracking-widest glow-accent transition-[background-color,color] duration-200 hover:bg-transparent hover:text-accent touch-manipulation"
         >
           Start a Conversation →
         </Link>

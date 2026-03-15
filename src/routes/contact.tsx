@@ -22,7 +22,7 @@ function ContactPage() {
         <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">
           // Get In Touch
         </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl">
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
           Let's Build Something{' '}
           <span className="accent-highlight">Together</span>
         </h1>
@@ -72,10 +72,20 @@ function ContactPage() {
                 // Connect
               </p>
               <div className="space-y-1.5">
-                {['LinkedIn', 'GitHub', 'X / Twitter'].map((platform) => (
-                  <p key={platform} className="font-mono text-[12px] text-muted-dark hover:text-accent transition-colors cursor-pointer">
-                    ■ {platform}
-                  </p>
+                {[
+                  { label: 'LinkedIn', href: 'https://linkedin.com' },
+                  { label: 'GitHub', href: 'https://github.com/HyperCubeSphere' },
+                  { label: 'X / Twitter', href: 'https://x.com' },
+                ].map((platform) => (
+                  <a
+                    key={platform.label}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-[12px] text-muted-dark hover:text-accent transition-[color] duration-200 block"
+                  >
+                    ■ {platform.label}
+                  </a>
                 ))}
               </div>
             </div>
