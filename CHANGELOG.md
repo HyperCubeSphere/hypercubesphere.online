@@ -1,0 +1,28 @@
+# 📦 hypercubesphere/hypercubesphere.online changelog
+
+[![conventional commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![semantic versioning](https://img.shields.io/badge/semantic%20versioning-2.0.0-green.svg)](https://semver.org)
+
+> All notable changes to this project will be documented in this file
+
+## 1.0.0 (2026-03-15)
+
+### 🍕 Features
+
+* add 404 page and improve static generation ([e8de1bc](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/e8de1bc9a497d75e3a7323805f48bd59752255d1))
+* initial commit ([1dcdfd5](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/1dcdfd5928d6fabc1ef853c4dbe8191fb6603378))
+* initial commit ([887a630](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/887a630fb919d2d1bd849619c687764fa5ef9c4e))
+
+### 🐛 Bug Fixes
+
+* correct ci permissions again ([24f9cd7](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/24f9cd728b78368cd069815852828d3c37c54036))
+* correct postcss and ci reusability ([e30d497](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/e30d497eadc41682296724113e452d120f712a26))
+
+### 🧑‍💻 Code Refactoring
+
+* fix accessibility and best practices ([bf0d8a4](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/bf0d8a4280f08236fe31aa46302657ffca9ffbec))
+
+### 🔁 Continuous Integration
+
+* correct workflow permissions for deploy ([b94fbd0](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/b94fbd0ca8327b3eb145d0e818515ad9a2f8c64e))
+* create release and deployment workflows ([6e3b13a](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/6e3b13a1c18393ea569d6d53c20b7b9af0820d59))
