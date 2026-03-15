@@ -9,9 +9,11 @@
       "version": "1.0.0",
       "license": "UNLICENSED",
       "dependencies": {
+        "@tailwindcss/postcss": "^4.2.1",
         "@tanstack/react-router": "^1.166.2",
         "@tanstack/react-start": "^1.166.2",
         "@vitejs/plugin-react": "^5.1.4",
+        "postcss": "^8.5.8",
         "react": "^19.2.4",
         "react-dom": "^19.2.4"
       },
@@ -26,6 +28,18 @@
       "engines": {
         "node": ">=24",
         "npm": ">=11"
+      }
+    },
+    "node_modules/@alloc/quick-lru": {
+      "version": "5.2.0",
+      "resolved": "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz",
+      "integrity": "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==",
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@babel/code-frame": {
@@ -1190,7 +1204,6 @@
       "version": "4.2.1",
       "resolved": "https://registry.npmjs.org/@tailwindcss/node/-/node-4.2.1.tgz",
       "integrity": "sha512-jlx6sLk4EOwO6hHe1oCGm1Q4AN/s0rSrTTPBGPM0/RQ6Uylwq17FuU8IeJJKEjtc6K6O07zsvP+gDO6MMWo7pg==",
-      "dev": true,
       "license": "MIT",
       "dependencies": {
         "@jridgewell/remapping": "^2.3.5",
@@ -1206,7 +1219,6 @@
       "version": "4.2.1",
       "resolved": "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.2.1.tgz",
       "integrity": "sha512-yv9jeEFWnjKCI6/T3Oq50yQEOqmpmpfzG1hcZsAOaXFQPfzWprWrlHSdGPEF3WQTi8zu8ohC9Mh9J470nT5pUw==",
-      "dev": true,
       "license": "MIT",
       "engines": {
         "node": ">= 20"
@@ -1233,7 +1245,6 @@
       "cpu": [
         "arm64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1250,7 +1261,6 @@
       "cpu": [
         "arm64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1267,7 +1277,6 @@
       "cpu": [
         "x64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1284,7 +1293,6 @@
       "cpu": [
         "x64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1301,7 +1309,6 @@
       "cpu": [
         "arm"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1318,7 +1325,6 @@
       "cpu": [
         "arm64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1335,7 +1341,6 @@
       "cpu": [
         "arm64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1352,7 +1357,6 @@
       "cpu": [
         "x64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1369,7 +1373,6 @@
       "cpu": [
         "x64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1394,7 +1397,6 @@
       "cpu": [
         "wasm32"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "dependencies": {
@@ -1416,7 +1418,6 @@
       "cpu": [
         "arm64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1433,7 +1434,6 @@
       "cpu": [
         "x64"
       ],
-      "dev": true,
       "license": "MIT",
       "optional": true,
       "os": [
@@ -1441,6 +1441,19 @@
       ],
       "engines": {
         "node": ">= 20"
+      }
+    },
+    "node_modules/@tailwindcss/postcss": {
+      "version": "4.2.1",
+      "resolved": "https://registry.npmjs.org/@tailwindcss/postcss/-/postcss-4.2.1.tgz",
+      "integrity": "sha512-OEwGIBnXnj7zJeonOh6ZG9woofIjGrd2BORfvE5p9USYKDCZoQmfqLcfNiRWoJlRWLdNPn2IgVZuWAOM4iTYMw==",
+      "license": "MIT",
+      "dependencies": {
+        "@alloc/quick-lru": "^5.2.0",
+        "@tailwindcss/node": "4.2.1",
+        "@tailwindcss/oxide": "4.2.1",
+        "postcss": "^8.5.6",
+        "tailwindcss": "4.2.1"
       }
     },
     "node_modules/@tailwindcss/vite": {
@@ -2258,7 +2271,6 @@
       "version": "2.1.2",
       "resolved": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
       "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
-      "devOptional": true,
       "license": "Apache-2.0",
       "engines": {
         "node": ">=8"
@@ -2351,7 +2363,6 @@
       "version": "5.20.0",
       "resolved": "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.20.0.tgz",
       "integrity": "sha512-/ce7+jQ1PQ6rVXwe+jKEg5hW5ciicHwIQUagZkp6IufBoY3YDgdTTY1azVs0qoRgVmvsNB+rbjLJxDAeHHtwsQ==",
-      "dev": true,
       "license": "MIT",
       "dependencies": {
         "graceful-fs": "^4.2.4",
@@ -2529,7 +2540,6 @@
       "version": "4.2.11",
       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz",
       "integrity": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
-      "dev": true,
       "license": "ISC"
     },
     "node_modules/h3-v2": {
@@ -2655,7 +2665,6 @@
       "version": "2.6.1",
       "resolved": "https://registry.npmjs.org/jiti/-/jiti-2.6.1.tgz",
       "integrity": "sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==",
-      "devOptional": true,
       "license": "MIT",
       "bin": {
         "jiti": "lib/jiti-cli.mjs"
@@ -2707,7 +2716,6 @@
       "version": "1.31.1",
       "resolved": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.31.1.tgz",
       "integrity": "sha512-l51N2r93WmGUye3WuFoN5k10zyvrVs0qfKBhyC5ogUQ6Ew6JUSswh78mbSO+IU3nTWsyOArqPCcShdQSadghBQ==",
-      "devOptional": true,
       "license": "MPL-2.0",
       "dependencies": {
         "detect-libc": "^2.0.3"
@@ -2966,7 +2974,6 @@
       "version": "0.30.21",
       "resolved": "https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz",
       "integrity": "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==",
-      "dev": true,
       "license": "MIT",
       "dependencies": {
         "@jridgewell/sourcemap-codec": "^1.5.5"
@@ -2989,7 +2996,6 @@
         }
       ],
       "license": "MIT",
-      "peer": true,
       "bin": {
         "nanoid": "bin/nanoid.cjs"
       },
@@ -3116,7 +3122,6 @@
         }
       ],
       "license": "MIT",
-      "peer": true,
       "dependencies": {
         "nanoid": "^3.3.11",
         "picocolors": "^1.1.1",
@@ -3356,14 +3361,12 @@
       "version": "4.2.1",
       "resolved": "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.2.1.tgz",
       "integrity": "sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==",
-      "dev": true,
       "license": "MIT"
     },
     "node_modules/tapable": {
       "version": "2.3.0",
       "resolved": "https://registry.npmjs.org/tapable/-/tapable-2.3.0.tgz",
       "integrity": "sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==",
-      "dev": true,
       "license": "MIT",
       "engines": {
         "node": ">=6"
