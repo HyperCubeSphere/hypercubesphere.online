@@ -11,7 +11,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Remote**: git@github.com:HyperCubeSphere/hypercubesphere.online.git
 - **IDE**: WebStorm
 - **Stack**: TanStack Start (React 19) + Tailwind CSS v4 + TypeScript + Vite
-- **Dev**: `npm run dev` (port 3000) · `npm run build` · `npm start`
+- **Dev**: `npm run dev` (port 3000) · `npm run build` · `npm run preview`
+- **Hosting**: GitHub Pages (static prerendering, deployed via GitHub Actions on push to main)
+- **Build output**: `dist/client/` contains all prerendered HTML + JS + CSS assets
 
 ## Design Context
 

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
             <Link to="/" className="font-mono font-extrabold text-base tracking-widest uppercase block mb-2">
-              HYPER<span className="text-accent">CUBE</span>SPHERE
+              HYPER<span className="bg-accent text-white px-1.5">CUBE</span>SPHERE
             </Link>
             <p className="font-mono text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider" suppressHydrationWarning>
               © {new Date().getFullYear()} HyperCubeSphere. All rights reserved.

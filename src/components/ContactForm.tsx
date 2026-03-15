@@ -80,7 +80,7 @@ function CustomSelect({ value, onChange }: { value: string; onChange: (v: string
         className={`w-full border-3 ${open ? 'border-accent' : 'border-border-light dark:border-border-dark'} bg-transparent px-4 py-3 font-mono text-sm uppercase tracking-wider text-left transition-[border-color] duration-200 cursor-pointer flex items-center justify-between`}
       >
         <span className={selected ? '' : 'text-muted-light dark:text-muted-dark'}>
-          {selected ? selected.label : 'SELECT SUBJECT\u2026'}
+          {selected ? selected.label : 'SELECT SUBJECT…'}
         </span>
         <span className="text-accent text-xs" aria-hidden="true">{open ? '\u25B2' : '\u25BC'}</span>
       </button>
@@ -148,7 +148,7 @@ export default function ContactForm() {
             type="text"
             name="name"
             autoComplete="name"
-            placeholder="NAME\u2026"
+            placeholder="NAME…"
             required
             className="w-full border-3 border-border-light dark:border-border-dark bg-transparent px-4 py-3 font-mono text-sm uppercase tracking-wider placeholder:text-muted-light dark:placeholder:text-muted-dark focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-[border-color] duration-200"
           />
@@ -161,7 +161,7 @@ export default function ContactForm() {
             name="email"
             autoComplete="email"
             spellCheck={false}
-            placeholder="EMAIL\u2026"
+            placeholder="EMAIL…"
             required
             className="w-full border-3 border-border-light dark:border-border-dark bg-transparent px-4 py-3 font-mono text-sm uppercase tracking-wider placeholder:text-muted-light dark:placeholder:text-muted-dark focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-[border-color] duration-200"
           />
@@ -174,7 +174,7 @@ export default function ContactForm() {
           type="text"
           name="company"
           autoComplete="organization"
-          placeholder="COMPANY\u2026"
+          placeholder="COMPANY…"
           className="w-full border-3 border-border-light dark:border-border-dark bg-transparent px-4 py-3 font-mono text-sm uppercase tracking-wider placeholder:text-muted-light dark:placeholder:text-muted-dark focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-[border-color] duration-200"
         />
       </div>
@@ -184,7 +184,7 @@ export default function ContactForm() {
         <textarea
           id="contact-message"
           name="message"
-          placeholder="YOUR MESSAGE\u2026"
+          placeholder="YOUR MESSAGE…"
           rows={5}
           required
           className="w-full border-3 border-border-light dark:border-border-dark bg-transparent px-4 py-3 font-mono text-sm uppercase tracking-wider placeholder:text-muted-light dark:placeholder:text-muted-dark focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-[border-color] duration-200 resize-none"
