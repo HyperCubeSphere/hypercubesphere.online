@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.3](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.2...v1.0.3) (2026-03-15)
+
+### 🔁 Continuous Integration
+
+* correct cname domain ([443b8d8](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/443b8d8d8b0349205e423df6e9027a172dfb5cff))
+
 ## [1.0.2](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.1...v1.0.2) (2026-03-15)
 
 ### 🤖 Build System
