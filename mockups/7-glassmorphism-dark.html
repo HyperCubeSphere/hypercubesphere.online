@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperCubeSphere — Glassmorphism Dark</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0c0c14; color: #fff; font-family: 'Inter', sans-serif;
+    overflow-x: hidden; position: relative;
+  }
+
+  /* Background blobs */
+  .bg-blob {
+    position: fixed; border-radius: 50%; pointer-events: none; filter: blur(100px);
+  }
+  .blob-1 {
+    width: 500px; height: 500px; top: -100px; right: -100px;
+    background: rgba(99, 102, 241, 0.15);
+  }
+  .blob-2 {
+    width: 400px; height: 400px; bottom: 10%; left: -100px;
+    background: rgba(6, 182, 212, 0.12);
+  }
+  .blob-3 {
+    width: 300px; height: 300px; top: 40%; right: 20%;
+    background: rgba(236, 72, 153, 0.08);
+  }
+
+  .content { position: relative; z-index: 1; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 60px;
+  }
+  .nav-glass {
+    background: rgba(255,255,255,0.04); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 16px;
+    padding: 12px 28px; display: flex; gap: 28px; align-items: center;
+  }
+  .logo { font-weight: 700; font-size: 20px; }
+  .logo span { color: #818cf8; }
+  nav a {
+    color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px;
+    font-weight: 500; transition: color 0.2s;
+  }
+  nav a:hover { color: #fff; }
+  .nav-cta {
+    background: rgba(129, 140, 248, 0.15); backdrop-filter: blur(10px);
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    color: #a5b4fc !important; padding: 10px 24px; border-radius: 12px;
+    font-weight: 600; transition: all 0.2s;
+  }
+  .nav-cta:hover { background: rgba(129, 140, 248, 0.25); }
+
+  .hero {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 100px 60px 80px;
+  }
+  .hero-badge {
+    background: rgba(255,255,255,0.04); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 100px;
+    padding: 8px 24px; font-size: 13px; color: rgba(255,255,255,0.6);
+    font-weight: 500; margin-bottom: 32px;
+  }
+  .hero-badge span { color: #818cf8; }
+  h1 {
+    font-size: 58px; font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+    max-width: 700px; letter-spacing: -0.5px;
+  }
+  .hero p {
+    font-size: 17px; color: rgba(255,255,255,0.4); max-width: 500px;
+    line-height: 1.7; margin-bottom: 40px;
+  }
+  .hero-buttons { display: flex; gap: 16px; }
+  .btn-primary {
+    background: rgba(129, 140, 248, 0.9); color: #fff; padding: 16px 36px;
+    border-radius: 14px; font-weight: 700; font-size: 15px; border: none;
+    cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 4px 24px rgba(129, 140, 248, 0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(129, 140, 248, 0.4); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.04); backdrop-filter: blur(20px);
+    color: #fff; padding: 16px 36px; border-radius: 14px;
+    font-weight: 600; font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.08); cursor: pointer; transition: all 0.3s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+
+  /* Glass feature cards */
+  .features {
+    display: flex; gap: 20px; padding: 20px 60px; margin-bottom: 40px;
+  }
+  .feature-glass {
+    flex: 1; background: rgba(255,255,255,0.03); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.06); border-radius: 20px;
+    padding: 28px 24px; text-align: center; transition: all 0.3s;
+  }
+  .feature-glass:hover {
+    background: rgba(255,255,255,0.06); border-color: rgba(129, 140, 248, 0.2);
+    transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .feature-icon { font-size: 28px; margin-bottom: 12px; }
+  .feature-glass h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .feature-glass p { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.5; }
+
+  .services { padding: 60px 60px; }
+  .section-eyebrow { font-size: 13px; color: #818cf8; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+  .section-title { font-size: 36px; font-weight: 700; margin-bottom: 48px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .service-card {
+    background: rgba(255,255,255,0.02); backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 20px;
+    padding: 32px 24px; transition: all 0.3s;
+  }
+  .service-card:hover {
+    background: rgba(255,255,255,0.05); border-color: rgba(129, 140, 248, 0.15);
+    transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .service-dot {
+    width: 8px; height: 8px; border-radius: 50%; background: #818cf8;
+    margin-bottom: 20px; box-shadow: 0 0 12px rgba(129, 140, 248, 0.4);
+  }
+  .service-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+  .service-card p { font-size: 14px; color: rgba(255,255,255,0.3); line-height: 1.7; }
+
+  footer {
+    padding: 40px 60px; border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+  }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="content">
+    <nav>
+      <div class="logo">Hyper<span>Cube</span>Sphere</div>
+      <div class="nav-glass">
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Team</a>
+        <a href="#">Blog</a>
+      </div>
+      <a href="#" class="nav-cta">Contact</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-badge">✦ <span>Strategic Software</span> · AI Innovation · Security</div>
+      <h1>Intelligence Meets Elegance</h1>
+      <p>We craft strategic software, innovate with AI, and deliver security solutions with precision and clarity.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Get Started</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </section>
+
+    <div class="features">
+      <div class="feature-glass">
+        <div class="feature-icon">⟨/⟩</div>
+        <h3>Strategic Software</h3>
+        <p>Enterprise systems built for scale and resilience</p>
+      </div>
+      <div class="feature-glass">
+        <div class="feature-icon">◈</div>
+        <h3>AI Innovation</h3>
+        <p>Intelligent automation and ML-powered solutions</p>
+      </div>
+      <div class="feature-glass">
+        <div class="feature-icon">⛊</div>
+        <h3>Cybersecurity</h3>
+        <p>Zero-trust architectures and threat prevention</p>
+      </div>
+    </div>
+
+    <section class="services">
+      <div class="section-eyebrow">Full Spectrum</div>
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>AI & Machine Learning</h3>
+          <p>Custom models, NLP, computer vision, and intelligent automation that transform workflows.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>Platform Engineering</h3>
+          <p>Scalable architectures, microservices, and developer platforms built for velocity.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>Security Operations</h3>
+          <p>SOC implementation, incident response, and continuous security monitoring.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>Cloud Architecture</h3>
+          <p>Multi-cloud strategies, serverless, and edge computing for global reach.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>Data Engineering</h3>
+          <p>Real-time pipelines, data mesh, and analytics platforms that scale.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-dot"></div>
+          <h3>Tech Advisory</h3>
+          <p>CTO partnership, technical due diligence, and digital transformation strategy.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 HyperCubeSphere</p>
+      <p>info@hypercubesphere.online</p>
+    </footer>
+  </div>
+</body>
+</html>

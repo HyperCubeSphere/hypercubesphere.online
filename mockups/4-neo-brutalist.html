@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperCubeSphere — Neo-Brutalist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fffef5; color: #1a1a1a; font-family: 'Space Grotesk', sans-serif; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px; border-bottom: 3px solid #1a1a1a;
+  }
+  .logo { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 18px; text-transform: uppercase; }
+  .logo .accent { background: #ff6b35; color: #fff; padding: 2px 6px; }
+  nav ul { display: flex; gap: 8px; list-style: none; align-items: center; }
+  nav a {
+    color: #1a1a1a; text-decoration: none; font-size: 14px; font-weight: 600;
+    text-transform: uppercase; padding: 8px 16px; border: 2px solid transparent;
+    transition: all 0.15s;
+  }
+  nav a:hover { border: 2px solid #1a1a1a; }
+  .nav-cta {
+    background: #1a1a1a !important; color: #fffef5 !important;
+    border: 2px solid #1a1a1a !important; padding: 8px 20px;
+  }
+  .nav-cta:hover { background: #ff6b35 !important; border-color: #ff6b35 !important; }
+
+  .hero {
+    padding: 80px 48px 60px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px;
+    align-items: center; border-bottom: 3px solid #1a1a1a;
+  }
+  .hero-tag {
+    font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px; color: #ff6b35;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 56px; font-weight: 700; line-height: 1.05; margin-bottom: 20px; letter-spacing: -1px; }
+  h1 .highlight {
+    background: #ff6b35; color: #fff; padding: 0 8px; display: inline;
+    box-decoration-break: clone; -webkit-box-decoration-break: clone;
+  }
+  .hero p { font-size: 17px; color: #555; line-height: 1.6; margin-bottom: 32px; max-width: 480px; }
+  .hero-buttons { display: flex; gap: 12px; }
+  .btn-primary {
+    background: #1a1a1a; color: #fffef5; padding: 16px 32px; font-weight: 700;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    border: 3px solid #1a1a1a; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif; transition: all 0.15s;
+  }
+  .btn-primary:hover { background: #ff6b35; border-color: #ff6b35; }
+  .btn-secondary {
+    background: transparent; color: #1a1a1a; padding: 16px 32px; font-weight: 700;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    border: 3px solid #1a1a1a; cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif; transition: all 0.15s;
+  }
+  .btn-secondary:hover { background: #1a1a1a; color: #fffef5; }
+
+  .hero-visual {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+  .stat-block {
+    border: 3px solid #1a1a1a; padding: 24px; background: #fff;
+  }
+  .stat-block.accent { background: #ff6b35; color: #fff; }
+  .stat-block.dark { background: #1a1a1a; color: #fffef5; }
+  .stat-block.blue { background: #3b82f6; color: #fff; }
+  .stat-number { font-family: 'Space Mono', monospace; font-size: 32px; font-weight: 700; }
+  .stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-weight: 600; }
+
+  .services { padding: 60px 48px; }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 32px; border-bottom: 3px solid #1a1a1a; padding-bottom: 16px;
+  }
+  .section-title { font-size: 32px; font-weight: 700; text-transform: uppercase; }
+  .section-count { font-family: 'Space Mono', monospace; font-size: 14px; color: #888; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .service-card {
+    border: 3px solid #1a1a1a; padding: 32px 24px; margin: -1.5px;
+    transition: all 0.15s; cursor: default;
+  }
+  .service-card:hover { background: #1a1a1a; color: #fffef5; transform: translate(-4px, -4px); box-shadow: 4px 4px 0 #ff6b35; }
+  .service-num {
+    font-family: 'Space Mono', monospace; font-size: 12px; color: #ff6b35;
+    margin-bottom: 16px; font-weight: 700;
+  }
+  .service-card:hover .service-num { color: #ff6b35; }
+  .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase; }
+  .service-card p { font-size: 14px; color: #666; line-height: 1.6; }
+  .service-card:hover p { color: #aaa; }
+
+  footer {
+    padding: 32px 48px; border-top: 3px solid #1a1a1a;
+    display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+  }
+  footer p { font-family: 'Space Mono', monospace; font-size: 12px; color: #888; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Hyper<span class="accent">Cube</span>Sphere</div>
+    <ul>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="hero-tag">Software × AI × Security</div>
+      <h1>We Build <span class="highlight">Bold</span> Software That Matters</h1>
+      <p>Strategic software solutions, AI innovation, and cybersecurity for companies that refuse to settle for ordinary.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Work With Us →</button>
+        <button class="btn-secondary">See Our Work</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-block accent">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-block dark">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">Uptime SLA</div>
+      </div>
+      <div class="stat-block blue">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Expert Team</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Security Monitoring</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="section-header">
+      <h2 class="section-title">Services</h2>
+      <span class="section-count">01 — 06</span>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>AI Engineering</h3>
+        <p>Custom models, intelligent automation, and ML pipelines built for production.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Software Strategy</h3>
+        <p>Architecture decisions, tech stacks, and roadmaps that align with business goals.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>Cybersecurity</h3>
+        <p>Penetration testing, audits, and zero-trust implementations to protect assets.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Cloud Ops</h3>
+        <p>Multi-cloud, Kubernetes, and infrastructure automation for resilient systems.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>Data Platforms</h3>
+        <p>Pipelines, warehouses, and analytics that turn raw data into business leverage.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>Tech Advisory</h3>
+        <p>CTO-level guidance, digital transformation strategy, and team augmentation.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 HyperCubeSphere</p>
+    <p>info@hypercubesphere.online</p>
+  </footer>
+</body>
+</html>

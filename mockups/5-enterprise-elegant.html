@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperCubeSphere — Enterprise Elegant</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #fafaf8; color: #1c1c1c; font-family: 'DM Sans', sans-serif; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 80px; background: #0d1b2a; color: #fff;
+  }
+  .logo { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: 1px; }
+  .logo span { color: #c9a84c; }
+  nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+  nav a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  nav a:hover { color: #fff; }
+  .nav-cta {
+    background: #c9a84c; color: #0d1b2a !important; padding: 10px 24px;
+    font-weight: 600; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #b8963e; }
+
+  .hero {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1b2d45 50%, #0d1b2a 100%);
+    color: #fff; padding: 100px 80px 90px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+  .hero-divider { width: 60px; height: 2px; background: #c9a84c; margin: 0 auto 28px; }
+  .hero-eyebrow {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 4px;
+    color: #c9a84c; margin-bottom: 16px; font-weight: 500;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif; font-size: 52px; font-weight: 400;
+    line-height: 1.2; margin-bottom: 24px; letter-spacing: 0.5px;
+  }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 40px; }
+  .hero-buttons { display: flex; gap: 16px; justify-content: center; }
+  .btn-primary {
+    background: #c9a84c; color: #0d1b2a; padding: 16px 40px; font-weight: 600;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 2px; border: none;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #d4b65e; }
+  .btn-secondary {
+    background: transparent; color: #fff; padding: 16px 40px; font-weight: 500;
+    font-size: 14px; text-transform: uppercase; letter-spacing: 2px;
+    border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: #c9a84c; color: #c9a84c; }
+
+  .pillars {
+    display: flex; justify-content: center; gap: 0; background: #fff;
+    border-bottom: 1px solid #eee;
+  }
+  .pillar {
+    padding: 40px 48px; text-align: center; border-right: 1px solid #eee;
+    flex: 1; max-width: 320px;
+  }
+  .pillar:last-child { border-right: none; }
+  .pillar-icon { font-size: 28px; margin-bottom: 12px; color: #c9a84c; }
+  .pillar h3 {
+    font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400;
+    margin-bottom: 8px; color: #0d1b2a;
+  }
+  .pillar p { font-size: 13px; color: #888; line-height: 1.6; }
+
+  .services { padding: 80px 80px; max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 4px;
+    color: #c9a84c; margin-bottom: 12px; font-weight: 500;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif; font-size: 36px; font-weight: 400;
+    color: #0d1b2a; margin-bottom: 8px;
+  }
+  .section-line { width: 40px; height: 2px; background: #c9a84c; margin: 16px auto 0; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .service-card {
+    background: #fff; border: 1px solid #eee; padding: 36px 28px;
+    transition: all 0.3s; text-align: center;
+  }
+  .service-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); border-color: #c9a84c; }
+  .service-icon-line { width: 32px; height: 2px; background: #c9a84c; margin: 0 auto 20px; }
+  .service-card h3 {
+    font-family: 'DM Serif Display', serif; font-size: 19px; font-weight: 400;
+    margin-bottom: 12px; color: #0d1b2a;
+  }
+  .service-card p { font-size: 14px; color: #888; line-height: 1.7; }
+
+  footer {
+    background: #0d1b2a; color: rgba(255,255,255,0.4); padding: 40px 80px;
+    display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+  }
+  footer p { font-size: 13px; }
+  footer .footer-logo { font-family: 'DM Serif Display', serif; font-size: 16px; color: #fff; }
+  footer .footer-logo span { color: #c9a84c; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Hyper<span>Cube</span>Sphere</div>
+    <ul>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Leadership</a></li>
+      <li><a href="#">Insights</a></li>
+      <li><a href="#" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Strategic Technology Partners</div>
+      <div class="hero-divider"></div>
+      <h1>Trusted Counsel for the Digital Age</h1>
+      <p>We deliver strategic software solutions, AI innovation, and enterprise-grade security for organizations that demand excellence and reliability.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Schedule Consultation</button>
+        <button class="btn-secondary">Our Expertise</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-icon">◆</div>
+      <h3>Strategic Software</h3>
+      <p>Enterprise architecture designed for longevity, scalability, and governance.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">◆</div>
+      <h3>AI Innovation</h3>
+      <p>Responsible AI solutions backed by rigorous methodology and ethical principles.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">◆</div>
+      <h3>Security & Risk</h3>
+      <p>Comprehensive cybersecurity programs that protect reputation and assets.</p>
+    </div>
+  </div>
+
+  <section class="services">
+    <div class="section-header">
+      <div class="section-eyebrow">Our Practice Areas</div>
+      <h2 class="section-title">Expertise & Capabilities</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Enterprise AI</h3>
+        <p>Bespoke AI systems with governance frameworks, from strategy through implementation and monitoring.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Software Excellence</h3>
+        <p>Mission-critical platforms built with disciplined engineering practices and proven methodologies.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Security Assurance</h3>
+        <p>Comprehensive threat assessment, compliance programs, and security architecture reviews.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Cloud Governance</h3>
+        <p>Multi-cloud strategies with cost optimization, compliance, and operational excellence frameworks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Data & Analytics</h3>
+        <p>Enterprise data platforms with governance, quality controls, and executive-ready analytics.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-line"></div>
+        <h3>Advisory Services</h3>
+        <p>Board-level technology counsel, due diligence, and digital transformation leadership.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Hyper<span>Cube</span>Sphere</div>
+    <p>© 2026 HyperCubeSphere. All rights reserved.</p>
+  </footer>
+</body>
+</html>

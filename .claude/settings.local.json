@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree:*)",
+      "mcp__plugin_playwright_playwright__browser_resize",
+      "mcp__plugin_playwright_playwright__browser_navigate",
+      "Bash(cd /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/mockups && python3 -m http.server 8787)",
+      "mcp__plugin_playwright_playwright__browser_take_screenshot",
+      "WebSearch",
+      "WebFetch(domain:tanstack.com)",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:blog.logrocket.com)",
+      "WebFetch(domain:www.codewithseb.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(timeout 20 npm run dev 2>&1 || true)",
+      "Bash(npm run:*)",
+      "Bash(sleep 5 && curl -s http://localhost:3000 | head -30)",
+      "Bash(ls node_modules/vite/package.json 2>/dev/null && node -e \"console.log\\(require\\('./node_modules/vite/package.json'\\).version\\)\")",
+      "Read(//private/tmp/**)",
+      "Bash(npx @tanstack/cli@latest create test-start --template file-router)",
+      "Bash(sleep 12 && curl -s http://localhost:3000 | head -30)",
+      "Bash(sleep 15 && curl -s http://localhost:3000 2>&1 | head -30)",
+      "Bash(curl -s http://localhost:3000 2>&1 | head -30)",
+      "Bash(lsof -ti:3000 2>/dev/null)",
+      "Bash(curl -s http://localhost:3000 2>&1 | grep -o 'We Engineer' | head -1)",
+      "Bash(lsof -ti:3000 2>/dev/null && echo \"Server running\" || echo \"Server not running\")",
+      "Bash(curl -s http://localhost:3000/services | grep -c 'AI Engineering' 2>&1)",
+      "Bash(curl -s http://localhost:3000/blog | grep -c 'AI-Driven' 2>&1)",
+      "Bash(for page:*)",
+      "mcp__plugin_playwright_playwright__browser_click",
+      "Bash(mv /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/final-*.png /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/mockups/ 2>/dev/null; mv /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/progress-*.png /Users/vortex/WebstormProjectsPersonal/hypercubesphere.online/mockups/ 2>/dev/null)",
+      "mcp__plugin_playwright_playwright__browser_hover",
+      "Bash(for f:*)"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperCubeSphere — 3D Immersive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #050510; color: #fff; font-family: 'Outfit', sans-serif; overflow-x: hidden; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 60px; position: relative; z-index: 10;
+  }
+  .logo { font-weight: 700; font-size: 20px; letter-spacing: 1px; }
+  nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+  nav a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+  nav a:hover { color: #fff; }
+  .nav-cta {
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);
+    color: #fff !important; padding: 10px 24px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15); font-weight: 600;
+  }
+
+  .hero {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 80vh; padding: 40px 60px; position: relative;
+  }
+  .hero-text { max-width: 560px; z-index: 2; }
+  .hero-3d {
+    position: absolute; right: 5%; top: 50%; transform: translateY(-50%);
+    width: 500px; height: 500px;
+  }
+  /* CSS 3D Cube */
+  .cube-container {
+    width: 200px; height: 200px; perspective: 800px;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .cube {
+    width: 200px; height: 200px; position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 12s infinite linear;
+  }
+  @keyframes rotateCube {
+    0% { transform: rotateX(-20deg) rotateY(0deg); }
+    100% { transform: rotateX(-20deg) rotateY(360deg); }
+  }
+  .cube-face {
+    position: absolute; width: 200px; height: 200px;
+    border: 1.5px solid rgba(100, 200, 255, 0.25);
+    background: rgba(100, 200, 255, 0.03);
+    backdrop-filter: blur(2px);
+  }
+  .cube-face:nth-child(1) { transform: translateZ(100px); }
+  .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(100px); }
+  .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(100px); }
+  .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
+  .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+  .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+
+  /* Glowing sphere */
+  .sphere {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(100, 200, 255, 0.4), rgba(100, 200, 255, 0.05) 60%, transparent 80%);
+    box-shadow: 0 0 60px rgba(100, 200, 255, 0.2), 0 0 120px rgba(100, 200, 255, 0.1);
+    animation: pulse 3s infinite ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 60px rgba(100, 200, 255, 0.2), 0 0 120px rgba(100, 200, 255, 0.1); }
+    50% { box-shadow: 0 0 80px rgba(100, 200, 255, 0.3), 0 0 160px rgba(100, 200, 255, 0.15); }
+  }
+
+  /* Orbit rings */
+  .orbit {
+    position: absolute; top: 50%; left: 50%; border-radius: 50%;
+    border: 1px solid rgba(100, 200, 255, 0.08);
+    transform: translate(-50%, -50%);
+  }
+  .orbit-1 { width: 300px; height: 300px; }
+  .orbit-2 { width: 400px; height: 400px; animation: spin 20s infinite linear; }
+  .orbit-3 { width: 480px; height: 480px; }
+  @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+  .hero-tag {
+    font-size: 13px; color: rgba(100, 200, 255, 0.8); font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;
+  }
+  h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+  h1 .glow {
+    color: #64c8ff;
+    text-shadow: 0 0 40px rgba(100, 200, 255, 0.3);
+  }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 36px; }
+  .hero-buttons { display: flex; gap: 16px; }
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #64c8ff);
+    color: #fff; padding: 16px 36px; border-radius: 12px;
+    font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+    box-shadow: 0 4px 24px rgba(100, 200, 255, 0.25); transition: all 0.3s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(100, 200, 255, 0.35); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.05); color: #fff; padding: 16px 36px; border-radius: 12px;
+    font-weight: 600; font-size: 15px; border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer; backdrop-filter: blur(10px); transition: all 0.3s;
+  }
+
+  .services { padding: 80px 60px; position: relative; z-index: 2; }
+  .section-eyebrow { font-size: 13px; color: #64c8ff; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; margin-bottom: 12px; }
+  .section-title { font-size: 36px; font-weight: 700; margin-bottom: 48px; }
+
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px; padding: 36px 28px; transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card:hover {
+    border-color: rgba(100, 200, 255, 0.2); background: rgba(100, 200, 255, 0.03);
+    transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .service-card::after {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.04) 0%, transparent 50%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .service-card:hover::after { opacity: 1; }
+  .service-icon { font-size: 28px; margin-bottom: 16px; }
+  .service-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; position: relative; z-index: 1; }
+  .service-card p { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; position: relative; z-index: 1; }
+
+  footer {
+    padding: 40px 60px; border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+  }
+  footer p { font-size: 13px; color: rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo">HyperCubeSphere</div>
+    <ul>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-tag">Next-Gen Solutions</div>
+      <h1>Shaping <span class="glow">Digital</span> Realities</h1>
+      <p>We architect strategic software, harness AI innovation, and engineer security solutions that push the boundaries of what's possible.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Explore Solutions</button>
+        <button class="btn-secondary">Watch Demo</button>
+      </div>
+    </div>
+    <div class="hero-3d">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <div class="cube-container">
+        <div class="cube">
+          <div class="cube-face"></div>
+          <div class="cube-face"></div>
+          <div class="cube-face"></div>
+          <div class="cube-face"></div>
+          <div class="cube-face"></div>
+          <div class="cube-face"></div>
+        </div>
+      </div>
+      <div class="sphere"></div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="section-eyebrow">Capabilities</div>
+    <h2 class="section-title">What We Engineer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>AI & Intelligence</h3>
+        <p>Neural networks, generative AI, and intelligent systems that transform how enterprises operate.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔮</div>
+        <h3>Strategic Software</h3>
+        <p>Immersive platforms and enterprise systems built with cutting-edge technologies and frameworks.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Cyber Defense</h3>
+        <p>AI-powered threat detection, zero-trust architecture, and advanced security operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Cloud Platforms</h3>
+        <p>Multi-cloud orchestration, edge computing, and serverless architectures at global scale.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📡</div>
+        <h3>Data Streams</h3>
+        <p>Real-time data processing, event-driven architectures, and predictive analytics engines.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <h3>DevOps & SRE</h3>
+        <p>Platform engineering, observability stacks, and reliability practices for 99.99% uptime.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 HyperCubeSphere</p>
+    <p>info@hypercubesphere.online</p>
+  </footer>
+</body>
+</html>

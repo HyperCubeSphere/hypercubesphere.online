@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */
+  --color-bg-dark: #08080c;
+  --color-bg-light: #fffef5;
+  --color-text-dark: #e0e0e8;
+  --color-text-light: #1a1a1a;
+  --color-accent: #ff6b35;
+  --color-accent-hover: #ff8555;
+  --color-border-dark: #1a1a25;
+  --color-border-light: #d4d0c8;
+  --color-muted-dark: #555;
+  --color-muted-light: #666;
+  --color-teal-tint: rgba(0, 255, 200, 0.05);
+  --color-hover-dark: #12100e;
+  --color-hover-light: #fff3ec;
+
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+html.dark body {
+  background-color: var(--color-bg-dark);
+}
+
+html.light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+html.light body {
+  background-color: var(--color-bg-light);
+}
+
+/* Grid overlay */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 107, 53, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+html.light .grid-overlay {
+  background-image:
+    linear-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* Glow effect utility */
+.glow-accent {
+  transition: box-shadow 0.2s ease;
+}
+.glow-accent:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.25);
+}
+
+/* Accent highlight inline */
+.accent-highlight {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0 0.4em;
+}
+
+/* 3px border utility */
+.border-3 {
+  border-width: 3px;
+}
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+.border-t-3 {
+  border-top-width: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(255, 107, 53, 0.3);
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 8px; }
+html.dark ::-webkit-scrollbar-track { background: var(--color-bg-dark); }
+html.dark ::-webkit-scrollbar-thumb { background: var(--color-border-dark); }
+html.light ::-webkit-scrollbar-track { background: var(--color-bg-light); }
+html.light ::-webkit-scrollbar-thumb { background: #ccc; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }

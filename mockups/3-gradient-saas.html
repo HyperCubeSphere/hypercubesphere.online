@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HyperCubeSphere — Gradient Modern SaaS</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f0a1e; color: #fff; font-family: 'Inter', sans-serif; }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 60px;
+  }
+  .logo { font-weight: 800; font-size: 22px; }
+  .logo-gradient {
+    background: linear-gradient(135deg, #a855f7, #6366f1, #06b6d4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  nav ul { display: flex; gap: 32px; list-style: none; align-items: center; }
+  nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+  nav a:hover { color: #fff; }
+  .nav-cta {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    color: #fff !important; padding: 10px 24px; border-radius: 100px;
+    font-weight: 600;
+  }
+
+  .hero {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 100px 60px 80px; position: relative; overflow: hidden;
+  }
+  .hero-glow {
+    position: absolute; top: -200px; width: 800px; height: 600px;
+    background: radial-gradient(ellipse, rgba(139, 92, 246, 0.3) 0%, rgba(6, 182, 212, 0.1) 40%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    font-size: 13px; color: #c084fc; background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 8px 20px; border-radius: 100px; font-weight: 500; margin-bottom: 28px;
+    position: relative; z-index: 1;
+  }
+  h1 {
+    font-size: 60px; font-weight: 900; line-height: 1.1; margin-bottom: 20px;
+    position: relative; z-index: 1; max-width: 750px;
+  }
+  h1 .gradient {
+    background: linear-gradient(135deg, #f0abfc, #818cf8, #22d3ee);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    font-size: 18px; color: rgba(255,255,255,0.5); max-width: 520px;
+    line-height: 1.7; margin-bottom: 40px; position: relative; z-index: 1;
+  }
+  .hero-buttons { display: flex; gap: 16px; position: relative; z-index: 1; }
+  .btn-primary {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    color: #fff; padding: 16px 36px; border-radius: 100px;
+    font-weight: 700; font-size: 15px; border: none; cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 4px 24px rgba(139, 92, 246, 0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(139, 92, 246, 0.5); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.05); color: #fff; padding: 16px 36px; border-radius: 100px;
+    font-weight: 600; font-size: 15px; border: 1px solid rgba(255,255,255,0.1); cursor: pointer;
+    backdrop-filter: blur(10px); transition: all 0.3s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+
+  .services { padding: 80px 60px; max-width: 1200px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #a855f7, #06b6d4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .section-title { font-size: 36px; font-weight: 800; margin-bottom: 48px; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service-card {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px; padding: 36px 28px; transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .service-card:hover {
+    border-color: rgba(139, 92, 246, 0.3); background: rgba(139, 92, 246, 0.05);
+    transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+  .service-icon {
+    width: 48px; height: 48px; border-radius: 14px; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+    background: linear-gradient(135deg, rgba(168,85,247,0.2), rgba(99,102,241,0.2));
+  }
+  .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .service-card p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+
+  footer {
+    padding: 40px 60px; border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center; margin-top: 40px;
+  }
+  footer p { font-size: 14px; color: rgba(255,255,255,0.25); }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><span class="logo-gradient">HyperCubeSphere</span></div>
+    <ul>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-badge">✦ Strategic Software & AI Innovation</div>
+    <h1>Where Strategy Meets <span class="gradient">Intelligence</span></h1>
+    <p>We build strategic software solutions powered by AI and fortified by security — helping enterprises innovate at scale.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary">Start a Project</button>
+      <button class="btn-secondary">View Solutions</button>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="section-eyebrow">Our Expertise</div>
+    <h2 class="section-title">Services & Solutions</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Solutions</h3>
+        <p>Custom AI models, intelligent automation, and ML-powered analytics for smarter decisions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Software Engineering</h3>
+        <p>High-performance applications with modern architectures, built to scale with your growth.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Security</h3>
+        <p>Advanced threat detection, security audits, and zero-trust implementations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Cloud & DevOps</h3>
+        <p>Seamless cloud migrations, Kubernetes orchestration, and CI/CD pipeline optimization.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Data Intelligence</h3>
+        <p>Real-time analytics, data lakes, and business intelligence platforms that drive value.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Innovation Labs</h3>
+        <p>Rapid prototyping, proof-of-concepts, and emerging tech exploration for your next big idea.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 HyperCubeSphere</p>
+    <p>info@hypercubesphere.online</p>
+  </footer>
+</body>
+</html>
