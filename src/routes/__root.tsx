@@ -21,6 +21,27 @@ export const Route = createRootRoute({
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap' },
     ],
+    scripts: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'HyperCubeSphere',
+          url: 'https://hypercubesphere.online',
+          publisher: {
+            '@type': 'Organization',
+            name: 'HyperCubeSphere',
+            url: 'https://hypercubesphere.online',
+            sameAs: [
+              'https://github.com/HyperCubeSphere',
+              'https://linkedin.com',
+              'https://x.com',
+            ],
+          },
+        }),
+      },
+    ],
   }),
   shellComponent: RootDocument,
 })

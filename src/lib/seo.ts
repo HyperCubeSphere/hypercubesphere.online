@@ -13,11 +13,12 @@ interface SeoConfig {
     publishedTime: string
     section: string
   }
+  extraMeta?: Array<Record<string, string>>
   jsonLd?: Record<string, unknown>
 }
 
 export function seo(config: SeoConfig) {
-  const { title, description, path, locale = 'en', type = 'website', article, jsonLd } = config
+  const { title, description, path, locale = 'en', type = 'website', article, extraMeta, jsonLd } = config
   const url = `${SITE_URL}/${locale}${path}`
 
   const meta: Array<Record<string, string>> = [
@@ -39,6 +40,10 @@ export function seo(config: SeoConfig) {
       { property: 'article:published_time', content: article.publishedTime },
       { property: 'article:section', content: article.section },
     )
+  }
+
+  if (extraMeta) {
+    meta.push(...extraMeta)
   }
 
   const links: Array<Record<string, string>> = [

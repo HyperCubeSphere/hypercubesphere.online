@@ -7,7 +7,33 @@ import { getTranslation } from '../i18n/translations'
 export const Route = createFileRoute('/$locale/services')({
   component: ServicesPage,
   head: ({ params }) => { const t = getTranslation(params.locale); return {
-    ...seo({ title: t.services.seoTitle, description: t.services.seoDescription, path: '/services', locale: params.locale }),
+    ...seo({
+      title: t.services.seoTitle,
+      description: t.services.seoDescription,
+      path: '/services',
+      locale: params.locale,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'HyperCubeSphere',
+        url: 'https://hypercubesphere.online',
+        description: 'Security-first, engineer-led technology consulting agency offering AI, cybersecurity, cloud, data, and strategic advisory services.',
+        areaServed: 'Worldwide',
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Technology Consulting Services',
+          itemListElement: t.services.items.map((s: any, i: number) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: s.title,
+              description: s.description,
+            },
+            position: i + 1,
+          })),
+        },
+      },
+    }),
   }},
 })
 

@@ -17,14 +17,33 @@ export const Route = createFileRoute('/$locale/blog/$slug')({
         locale: params.locale,
         type: 'article',
         article: { publishedTime: post.dateISO, section: post.category },
+        extraMeta: [
+          { name: 'author', content: 'HyperCubeSphere' },
+          { property: 'article:author', content: 'https://hypercubesphere.online' },
+        ],
         jsonLd: {
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: post.title,
           description: post.excerpt,
           datePublished: post.dateISO,
-          author: { '@type': 'Organization', name: 'HyperCubeSphere' },
-          publisher: { '@type': 'Organization', name: 'HyperCubeSphere' },
+          dateModified: post.dateISO,
+          articleSection: post.category,
+          wordCount: post.content.split(/\s+/).length,
+          author: {
+            '@type': 'Organization',
+            name: 'HyperCubeSphere',
+            url: 'https://hypercubesphere.online',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'HyperCubeSphere',
+            url: 'https://hypercubesphere.online',
+          },
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://hypercubesphere.online/${params.locale}/blog/${post.slug}`,
+          },
         },
       }),
     }
@@ -49,16 +68,16 @@ function BlogPostPage() {
   const formattedDate = new Date(post.dateISO).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })
 
   return (
-    <div>
-      <section className="px-6 md:px-12 py-16 md:py-24 border-b-3 border-border-light dark:border-border-dark">
+    <article>
+      <header className="px-6 md:px-12 py-16 md:py-24 border-b-3 border-border-light dark:border-border-dark">
         <Link to="/$locale/blog" params={{ locale }} className="font-mono text-xs text-accent uppercase tracking-widest hover:underline mb-6 inline-block">{t.blog.backToBlog}</Link>
         <div className="flex items-center gap-4 mb-4">
           <span className="font-mono text-[11px] font-bold uppercase tracking-widest text-accent">// {post.category}</span>
           <span className="font-mono text-[11px] text-muted-light dark:text-muted-dark">{post.readTime}</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4 max-w-3xl text-balance">{post.title}</h1>
-        <p className="font-mono text-sm text-muted-light dark:text-muted-dark">{formattedDate}</p>
-      </section>
+        <time dateTime={post.dateISO} className="font-mono text-sm text-muted-light dark:text-muted-dark">{formattedDate}</time>
+      </header>
 
       <section className="px-6 md:px-12 py-16 max-w-3xl">
         <div className="space-y-6">
@@ -68,9 +87,9 @@ function BlogPostPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-12 py-10 border-t-3 border-border-light dark:border-border-dark">
+      <footer className="px-6 md:px-12 py-10 border-t-3 border-border-light dark:border-border-dark">
         <Link to="/$locale/blog" params={{ locale }} className="font-mono text-sm text-accent font-bold uppercase tracking-widest hover:underline">{t.blog.allPosts}</Link>
-      </section>
-    </div>
+      </footer>
+    </article>
   )
 }
