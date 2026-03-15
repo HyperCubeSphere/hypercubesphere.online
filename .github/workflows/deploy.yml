@@ -1,0 +1,35 @@
+name: "Deploy"
+
+on: push
+
+permissions:
+  contents: write
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v6
+
+      - name: "🚧️ setup node"
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: "📦 install dependencies"
+        uses: bahmutov/npm-install@v1
+
+      - name: "📦 build static"
+        run: npm run build
+
+      - name: "🚀 deploy static"
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/client
+          commit_message: ${{ github.event.head_commit.message }}
+          enable_jekyll: false
+          cname: ${{ github.repository }}
