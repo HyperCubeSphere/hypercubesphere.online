@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.2](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.1...v1.0.2) (2026-03-15)
+
+### 🤖 Build System
+
+* add missing autoprefixer dependency ([b16d95c](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/b16d95cb24f8f15cece840840743a1ca27b8f92d))
+
 ## [1.0.1](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.0...v1.0.1) (2026-03-15)
 
 ### 🐛 Bug Fixes
