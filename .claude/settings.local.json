@@ -38,7 +38,8 @@
       "Bash(npx tsc:*)",
       "Bash(npx vite:*)",
       "Bash(cat:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(find:*)"
     ]
   }
 }

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
+import { useI18n } from '../i18n'
 
 export default function ThemeToggle() {
+  const { t } = useI18n()
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
   useEffect(() => {
@@ -25,9 +27,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       className="font-mono text-xs uppercase tracking-wider border-2 border-current px-3 py-1.5 transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
-      aria-label="Toggle theme"
+      aria-label={t.theme.toggleLabel}
     >
-      {theme === 'dark' ? '// LIGHT' : '// DARK'}
+      {theme === 'dark' ? t.theme.light : t.theme.dark}
     </button>
   )
 }

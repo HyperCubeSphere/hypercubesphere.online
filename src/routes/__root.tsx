@@ -1,6 +1,5 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import { HeadContent, Scripts, createRootRoute, useRouterState } from '@tanstack/react-router'
+import { locales } from '../i18n/config'
 import appCss from '../styles.css?url'
 
 const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark')?stored:'dark';var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(mode);root.style.colorScheme=mode;var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=mode==='dark'?'#08080c':'#fffef5';}catch(e){}})();`
@@ -14,7 +13,6 @@ export const Route = createRootRoute({
       { name: 'description', content: 'HyperCubeSphere delivers strategic software solutions, AI innovation, and cybersecurity for forward-thinking enterprises.' },
       { name: 'theme-color', content: '#08080c' },
       { property: 'og:site_name', content: 'HyperCubeSphere' },
-      { property: 'og:locale', content: 'en_US' },
       { name: 'twitter:card', content: 'summary' },
     ],
     links: [
@@ -28,23 +26,20 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname })
+  const segments = pathname.split('/')
+  const lang = locales.includes(segments[1] as any) ? segments[1] : 'en'
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <HeadContent />
       </head>
       <body className="min-h-screen font-sans antialiased">
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
         <div className="grid-overlay" aria-hidden="true" />
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Navbar />
-          <main id="main-content" className="flex-1">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </div>
         <Scripts />
       </body>

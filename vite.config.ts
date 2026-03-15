@@ -5,15 +5,11 @@ import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { writeFileSync, existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { blogPosts } from './src/data/blog-posts'
+import { locales, blogSlugs } from './src/i18n/config'
 
 const SITE_URL = 'https://hypercubesphere.online'
 
-const staticPages: Array<{
-  path: string
-  changefreq: string
-  priority: string
-}> = [
+const staticPages = [
   { path: '/', changefreq: 'monthly', priority: '1.0' },
   { path: '/services', changefreq: 'monthly', priority: '0.9' },
   { path: '/about', changefreq: 'monthly', priority: '0.8' },
@@ -31,32 +27,28 @@ function sitemapPlugin(): Plugin {
       const outDir = resolve(process.cwd(), 'dist/client')
       if (!existsSync(outDir)) return
 
-      const staticUrls = staticPages
-        .map(
-          (page) => `  <url>
-    <loc>${SITE_URL}${page.path}</loc>
+      const urls: string[] = []
+
+      for (const locale of locales) {
+        for (const page of staticPages) {
+          urls.push(`  <url>
+    <loc>${SITE_URL}/${locale}${page.path === '/' ? '' : page.path}</loc>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
-  </url>`,
-        )
-        .join('\n')
-
-      const blogUrls = blogPosts
-        .map((post) => {
-          const lastmod = new Date(post.date).toISOString().split('T')[0]
-          return `  <url>
-    <loc>${SITE_URL}/blog/${post.slug}</loc>
-    <lastmod>${lastmod}</lastmod>
+  </url>`)
+        }
+        for (const slug of blogSlugs) {
+          urls.push(`  <url>
+    <loc>${SITE_URL}/${locale}/blog/${slug}</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
-  </url>`
-        })
-        .join('\n')
+  </url>`)
+        }
+      }
 
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${staticUrls}
-${blogUrls}
+${urls.join('\n')}
 </urlset>`
 
       writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap)
@@ -74,14 +66,17 @@ export default defineConfig({
         crawlLinks: true,
       },
       pages: [
-        { path: '/', prerender: { enabled: true, crawlLinks: true } },
-        { path: '/services' },
-        { path: '/about' },
-        { path: '/team' },
-        { path: '/blog', prerender: { enabled: true, crawlLinks: true } },
-        ...blogPosts.map((post) => ({ path: `/blog/${post.slug}` })),
-        { path: '/contact' },
-        { path: '/privacy' },
+        { path: '/' },
+        ...(locales as readonly string[]).flatMap((l) => [
+          { path: `/${l}`, prerender: { crawlLinks: true } },
+          { path: `/${l}/services` },
+          { path: `/${l}/about` },
+          { path: `/${l}/team` },
+          { path: `/${l}/blog`, prerender: { crawlLinks: true } },
+          ...blogSlugs.map((slug) => ({ path: `/${l}/blog/${slug}` })),
+          { path: `/${l}/contact` },
+          { path: `/${l}/privacy` },
+        ]),
         { path: '/404' },
       ],
     }),

@@ -9,50 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TeamRouteImport } from './routes/team'
-import { Route as ServicesRouteImport } from './routes/services'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as R404RouteImport } from './routes/404'
+import { Route as LocaleRouteImport } from './routes/$locale'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as LocaleIndexRouteImport } from './routes/$locale.index'
+import { Route as LocaleTeamRouteImport } from './routes/$locale.team'
+import { Route as LocaleServicesRouteImport } from './routes/$locale.services'
+import { Route as LocalePrivacyRouteImport } from './routes/$locale.privacy'
+import { Route as LocaleContactRouteImport } from './routes/$locale.contact'
+import { Route as LocaleBlogRouteImport } from './routes/$locale.blog'
+import { Route as LocaleAboutRouteImport } from './routes/$locale.about'
+import { Route as LocaleBlogIndexRouteImport } from './routes/$locale.blog.index'
+import { Route as LocaleBlogSlugRouteImport } from './routes/$locale.blog.$slug'
 
-const TeamRoute = TeamRouteImport.update({
-  id: '/team',
-  path: '/team',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const R404Route = R404RouteImport.update({
   id: '/404',
   path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocaleRoute = LocaleRouteImport.update({
+  id: '/$locale',
+  path: '/$locale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -60,151 +37,156 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
+const LocaleIndexRoute = LocaleIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => BlogRoute,
+  getParentRoute: () => LocaleRoute,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
+const LocaleTeamRoute = LocaleTeamRouteImport.update({
+  id: '/team',
+  path: '/team',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleServicesRoute = LocaleServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocalePrivacyRoute = LocalePrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleContactRoute = LocaleContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleBlogRoute = LocaleBlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleAboutRoute = LocaleAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => LocaleRoute,
+} as any)
+const LocaleBlogIndexRoute = LocaleBlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LocaleBlogRoute,
+} as any)
+const LocaleBlogSlugRoute = LocaleBlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => BlogRoute,
+  getParentRoute: () => LocaleBlogRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/404': typeof R404Route
-  '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
-  '/team': typeof TeamRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/': typeof BlogIndexRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/blog': typeof LocaleBlogRouteWithChildren
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/services': typeof LocaleServicesRoute
+  '/$locale/team': typeof LocaleTeamRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/$locale/blog/$slug': typeof LocaleBlogSlugRoute
+  '/$locale/blog/': typeof LocaleBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/404': typeof R404Route
-  '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
-  '/team': typeof TeamRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog': typeof BlogIndexRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/services': typeof LocaleServicesRoute
+  '/$locale/team': typeof LocaleTeamRoute
+  '/$locale': typeof LocaleIndexRoute
+  '/$locale/blog/$slug': typeof LocaleBlogSlugRoute
+  '/$locale/blog': typeof LocaleBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$locale': typeof LocaleRouteWithChildren
   '/404': typeof R404Route
-  '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
-  '/contact': typeof ContactRoute
-  '/privacy': typeof PrivacyRoute
-  '/services': typeof ServicesRoute
-  '/team': typeof TeamRoute
-  '/blog/$slug': typeof BlogSlugRoute
-  '/blog/': typeof BlogIndexRoute
+  '/$locale/about': typeof LocaleAboutRoute
+  '/$locale/blog': typeof LocaleBlogRouteWithChildren
+  '/$locale/contact': typeof LocaleContactRoute
+  '/$locale/privacy': typeof LocalePrivacyRoute
+  '/$locale/services': typeof LocaleServicesRoute
+  '/$locale/team': typeof LocaleTeamRoute
+  '/$locale/': typeof LocaleIndexRoute
+  '/$locale/blog/$slug': typeof LocaleBlogSlugRoute
+  '/$locale/blog/': typeof LocaleBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$locale'
     | '/404'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/privacy'
-    | '/services'
-    | '/team'
-    | '/blog/$slug'
-    | '/blog/'
+    | '/$locale/about'
+    | '/$locale/blog'
+    | '/$locale/contact'
+    | '/$locale/privacy'
+    | '/$locale/services'
+    | '/$locale/team'
+    | '/$locale/'
+    | '/$locale/blog/$slug'
+    | '/$locale/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/404'
-    | '/about'
-    | '/contact'
-    | '/privacy'
-    | '/services'
-    | '/team'
-    | '/blog/$slug'
-    | '/blog'
+    | '/$locale/about'
+    | '/$locale/contact'
+    | '/$locale/privacy'
+    | '/$locale/services'
+    | '/$locale/team'
+    | '/$locale'
+    | '/$locale/blog/$slug'
+    | '/$locale/blog'
   id:
     | '__root__'
     | '/'
+    | '/$locale'
     | '/404'
-    | '/about'
-    | '/blog'
-    | '/contact'
-    | '/privacy'
-    | '/services'
-    | '/team'
-    | '/blog/$slug'
-    | '/blog/'
+    | '/$locale/about'
+    | '/$locale/blog'
+    | '/$locale/contact'
+    | '/$locale/privacy'
+    | '/$locale/services'
+    | '/$locale/team'
+    | '/$locale/'
+    | '/$locale/blog/$slug'
+    | '/$locale/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LocaleRoute: typeof LocaleRouteWithChildren
   R404Route: typeof R404Route
-  AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRouteWithChildren
-  ContactRoute: typeof ContactRoute
-  PrivacyRoute: typeof PrivacyRoute
-  ServicesRoute: typeof ServicesRoute
-  TeamRoute: typeof TeamRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/team': {
-      id: '/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof TeamRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/404': {
       id: '/404'
       path: '/404'
       fullPath: '/404'
       preLoaderRoute: typeof R404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$locale': {
+      id: '/$locale'
+      path: '/$locale'
+      fullPath: '/$locale'
+      preLoaderRoute: typeof LocaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -214,44 +196,113 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
+    '/$locale/': {
+      id: '/$locale/'
       path: '/'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof BlogRoute
+      fullPath: '/$locale/'
+      preLoaderRoute: typeof LocaleIndexRouteImport
+      parentRoute: typeof LocaleRoute
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
+    '/$locale/team': {
+      id: '/$locale/team'
+      path: '/team'
+      fullPath: '/$locale/team'
+      preLoaderRoute: typeof LocaleTeamRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/services': {
+      id: '/$locale/services'
+      path: '/services'
+      fullPath: '/$locale/services'
+      preLoaderRoute: typeof LocaleServicesRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/privacy': {
+      id: '/$locale/privacy'
+      path: '/privacy'
+      fullPath: '/$locale/privacy'
+      preLoaderRoute: typeof LocalePrivacyRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/contact': {
+      id: '/$locale/contact'
+      path: '/contact'
+      fullPath: '/$locale/contact'
+      preLoaderRoute: typeof LocaleContactRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/blog': {
+      id: '/$locale/blog'
+      path: '/blog'
+      fullPath: '/$locale/blog'
+      preLoaderRoute: typeof LocaleBlogRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/about': {
+      id: '/$locale/about'
+      path: '/about'
+      fullPath: '/$locale/about'
+      preLoaderRoute: typeof LocaleAboutRouteImport
+      parentRoute: typeof LocaleRoute
+    }
+    '/$locale/blog/': {
+      id: '/$locale/blog/'
+      path: '/'
+      fullPath: '/$locale/blog/'
+      preLoaderRoute: typeof LocaleBlogIndexRouteImport
+      parentRoute: typeof LocaleBlogRoute
+    }
+    '/$locale/blog/$slug': {
+      id: '/$locale/blog/$slug'
       path: '/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+      fullPath: '/$locale/blog/$slug'
+      preLoaderRoute: typeof LocaleBlogSlugRouteImport
+      parentRoute: typeof LocaleBlogRoute
     }
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-  BlogIndexRoute: typeof BlogIndexRoute
+interface LocaleBlogRouteChildren {
+  LocaleBlogSlugRoute: typeof LocaleBlogSlugRoute
+  LocaleBlogIndexRoute: typeof LocaleBlogIndexRoute
 }
 
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-  BlogIndexRoute: BlogIndexRoute,
+const LocaleBlogRouteChildren: LocaleBlogRouteChildren = {
+  LocaleBlogSlugRoute: LocaleBlogSlugRoute,
+  LocaleBlogIndexRoute: LocaleBlogIndexRoute,
 }
 
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+const LocaleBlogRouteWithChildren = LocaleBlogRoute._addFileChildren(
+  LocaleBlogRouteChildren,
+)
+
+interface LocaleRouteChildren {
+  LocaleAboutRoute: typeof LocaleAboutRoute
+  LocaleBlogRoute: typeof LocaleBlogRouteWithChildren
+  LocaleContactRoute: typeof LocaleContactRoute
+  LocalePrivacyRoute: typeof LocalePrivacyRoute
+  LocaleServicesRoute: typeof LocaleServicesRoute
+  LocaleTeamRoute: typeof LocaleTeamRoute
+  LocaleIndexRoute: typeof LocaleIndexRoute
+}
+
+const LocaleRouteChildren: LocaleRouteChildren = {
+  LocaleAboutRoute: LocaleAboutRoute,
+  LocaleBlogRoute: LocaleBlogRouteWithChildren,
+  LocaleContactRoute: LocaleContactRoute,
+  LocalePrivacyRoute: LocalePrivacyRoute,
+  LocaleServicesRoute: LocaleServicesRoute,
+  LocaleTeamRoute: LocaleTeamRoute,
+  LocaleIndexRoute: LocaleIndexRoute,
+}
+
+const LocaleRouteWithChildren =
+  LocaleRoute._addFileChildren(LocaleRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LocaleRoute: LocaleRouteWithChildren,
   R404Route: R404Route,
-  AboutRoute: AboutRoute,
-  BlogRoute: BlogRouteWithChildren,
-  ContactRoute: ContactRoute,
-  PrivacyRoute: PrivacyRoute,
-  ServicesRoute: ServicesRoute,
-  TeamRoute: TeamRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
