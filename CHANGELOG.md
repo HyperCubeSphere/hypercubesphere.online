@@ -5,6 +5,17 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.1.0...v1.2.0) (2026-03-22)
+
+### 🍕 Features
+
+* adjust team members ([485bcb8](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/485bcb8887bc3b4dd9500495298164e92362af53))
+* improve design and ux with impeccable ([7538d51](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/7538d51606e06ff46c6fdc13ed5b0748189df0ee))
+
+### 🐛 Bug Fixes
+
+* correct romanian language typos ([53afca3](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/53afca3828f625893fc50d841fcefa94e158dc8b))
+
 ## [1.1.0](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.0.3...v1.1.0) (2026-03-15)
 
 ### 🍕 Features
