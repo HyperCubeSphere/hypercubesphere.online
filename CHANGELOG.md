@@ -5,6 +5,12 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.3.0](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.2.0...v1.3.0) (2026-03-22)
+
+### 🍕 Features
+
+* add translations emdashes ([53b989b](https://github.com/HyperCubeSphere/hypercubesphere.online/commit/53b989b2501bacdfe600d1fb518594869b4067b7))
+
 ## [1.2.0](https://github.com/HyperCubeSphere/hypercubesphere.online/compare/v1.1.0...v1.2.0) (2026-03-22)
 
 ### 🍕 Features
