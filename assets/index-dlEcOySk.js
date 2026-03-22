@@ -1,1 +1,0 @@
-import{r}from"./main-BTfOk2WJ.js";const e=r.createContext(null),o=e.Provider;function s(){const t=r.useContext(e);if(!t)throw new Error("useI18n must be used within I18nProvider");return t}export{o as I,s as u};
