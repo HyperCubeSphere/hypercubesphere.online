@@ -4,6 +4,38 @@ import { useI18n } from '../i18n'
 import { seo } from '../lib/seo'
 import { getTranslation } from '../i18n/translations'
 
+const memberImages: Record<string, string> = {
+  TV: '/team/ted-vortex.jpg',
+  AC: '/team/alexandru-chirica.jpg',
+  OS: '/team/ogbonna-sunday.jpg',
+  MA: '/team/morgan-ambrose.jpg',
+  IA: '/team/ise-andrei.jpg',
+}
+
+const memberSocials: Record<string, Array<{ type: 'linkedin' | 'github' | 'website'; url: string }>> = {
+  TV: [
+    { type: 'linkedin', url: 'https://linkedin.com/in/tedvortex' },
+    { type: 'github', url: 'https://github.com/0-vortex' },
+    { type: 'website', url: 'https://vortex.name' },
+  ],
+  AC: [
+    { type: 'linkedin', url: 'https://linkedin.com/in/alexandrumarianchirica' },
+    { type: 'github', url: 'https://github.com/alexandru-chirica' },
+  ],
+  MA: [
+    { type: 'linkedin', url: 'https://linkedin.com/in/morganrequiem' },
+  ],
+  OS: [
+    { type: 'linkedin', url: 'https://linkedin.com/in/ogbonnasunday' },
+    { type: 'github', url: 'https://github.com/OgDev-01' },
+    { type: 'website', url: 'https://ogbonna.dev' },
+  ],
+  IA: [
+    { type: 'linkedin', url: 'https://linkedin.com/in/ise-andrei-949694229' },
+    { type: 'github', url: 'https://github.com/h1ve-sp4wn' },
+  ],
+}
+
 export const Route = createFileRoute('/$locale/team')({
   component: TeamPage,
   head: ({ params }) => { const t = getTranslation(params.locale); return {
@@ -32,7 +64,7 @@ function TeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {tm.members.map((member) => (
               <div key={member.initials}>
-                <TeamCard {...member} />
+                <TeamCard {...member} image={memberImages[member.initials]} socials={memberSocials[member.initials]} />
               </div>
             ))}
           </div>

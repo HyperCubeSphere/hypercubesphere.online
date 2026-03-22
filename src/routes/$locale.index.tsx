@@ -22,7 +22,7 @@ export const Route = createFileRoute('/$locale/')({
         url: 'https://hypercubesphere.online',
         description: 'Security-first, engineer-led technology consulting agency offering AI, cybersecurity, cloud, data, and strategic advisory services to enterprises.',
         foundingDate: '2021',
-        numberOfEmployees: { '@type': 'QuantitativeValue', value: 6 },
+        numberOfEmployees: { '@type': 'QuantitativeValue', value: 5 },
         areaServed: 'Worldwide',
         knowsAbout: ['Artificial Intelligence', 'Cybersecurity', 'Cloud Architecture', 'Software Strategy', 'Data Engineering', 'Digital Transformation'],
         sameAs: ['https://github.com/HyperCubeSphere', 'https://linkedin.com', 'https://x.com'],
