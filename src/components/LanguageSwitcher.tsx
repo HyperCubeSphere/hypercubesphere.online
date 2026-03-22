@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider border-2 border-current px-2.5 py-1.5 transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
+        className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider border-2 border-current px-2.5 py-2.5 min-h-[44px] transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
         aria-label={`${locale.toUpperCase()} — Switch language`}
         aria-expanded={open}
         aria-haspopup="listbox"
@@ -46,7 +46,7 @@ export default function LanguageSwitcher() {
               role="option"
               aria-selected={l === locale}
               onClick={() => setOpen(false)}
-              className={`flex items-center gap-2.5 px-3 py-2.5 font-mono text-[12px] uppercase tracking-wider transition-[background-color,color] duration-150 cursor-pointer hover:bg-accent hover:text-white ${l === locale ? 'text-accent font-bold' : 'text-muted-light dark:text-muted-dark'}`}
+              className={`flex items-center gap-2.5 px-3 py-2.5 min-h-[44px] font-mono text-[12px] uppercase tracking-wider transition-[background-color,color] duration-150 cursor-pointer hover:bg-accent hover:text-white ${l === locale ? 'text-accent font-bold' : 'text-muted-light dark:text-muted-dark'}`}
             >
               <FlagIcon locale={l} className="w-4 h-auto shrink-0" />
               <span>{localeNames[l]}</span>

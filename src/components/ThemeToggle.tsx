@@ -26,7 +26,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      className="font-mono text-xs uppercase tracking-wider border-2 border-current px-3 py-1.5 transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
+      className="font-mono text-xs uppercase tracking-wider border-2 border-current px-3 py-2.5 min-h-[44px] transition-[border-color,color] duration-200 hover:border-accent hover:text-accent cursor-pointer touch-manipulation"
       aria-label={t.theme.toggleLabel}
     >
       {theme === 'dark' ? t.theme.light : t.theme.dark}

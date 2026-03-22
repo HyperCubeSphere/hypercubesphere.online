@@ -186,10 +186,10 @@ const tr = {
     members: [
       { name: 'Alexandra Chen', role: 'CEO ve Kurucu', bio: 'Eski Dört Büyük danışmanlık firması strateji direktörü. Fortune 500 şirketleri için 15 yıllık dijital dönüşüm deneyimi. Teknoloji yatırımlarını iş sonuçlarıyla uyumlu hale getirme tutkusu.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'CTO', bio: "Eski hiper ölçekleyici baş mühendis. 10M+ olay/sn işleyen dağıtık sistemler inşa etti. Harika mimarinin görünmez olduğuna inanıyor — yalnızca eksik olduğunda fark ediyorsunuz.", initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'Yapay Zeka Başkanı', bio: 'ETH Zurich\'ten Makine Öğrenimi doktorası. Doğal dil işleme ve bilgisayarlı görü alanında yayınlanmış araştırmacı. Öncü araştırma ile üretime hazır yapay zeka sistemleri arasında köprü kuruyor.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'Yapay Zeka Başkanı', bio: 'ETH Zurich\'ten Makine Öğrenimi doktorası. Doğal dil işleme ve bilgisayarlı görü alanında yayınlanmış araştırmacı. Öncü araştırma ile üretime hazır yapay zeka sistemleri arasında köprü kuruyor.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Güvenlik Başkanı', bio: 'Eski devlet siber güvenlik analisti. CISSP, OSCP sertifikalı. Kritik altyapı için olay müdahalesini yönetti. Bir saldırgan gibi düşünür, bir savunucu gibi inşa eder.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Baş Mühendis', bio: 'Bulut yerel sistemlerde derin uzmanlığa sahip tam yığın mimar. Fintech ve healthtech genelinde 10+ yıllık üretim kodu deneyimi. Temiz kod ve pragmatik mühendisliğin savunucusu.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Operasyon Başkanı', bio: '3 kıtada karmaşık teknoloji programlarını yönetme deneyimine sahip PMP sertifikalı. Her projenin zamanında, bütçe dahilinde teslim edilmesini ve beklentileri aşmasını sağlar.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Operasyon Başkanı', bio: '3 kıtada karmaşık teknoloji programlarını yönetme deneyimine sahip PMP sertifikalı. Her projenin zamanında, bütçe dahilinde teslim edilmesini ve beklentileri aşmasını sağlar.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Kariyer',
     careersTitle: 'Ekibe Katılmak İster misiniz?',

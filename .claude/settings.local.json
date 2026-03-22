@@ -39,7 +39,14 @@
       "Bash(npx vite:*)",
       "Bash(cat:*)",
       "Bash(node:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(do sed:*)",
+      "Bash(done)",
+      "Bash(wc -c dist/client/assets/*.js dist/client/assets/*.css)",
+      "Bash(gzip -c dist/client/assets/main-nXYicqjD.js)",
+      "Bash(gzip -c dist/client/assets/styles-DaVmH3Xh.css)",
+      "Bash(gzip -c dist/client/assets/main-*.js)",
+      "Bash(gzip -c dist/client/assets/styles-*.css)"
     ]
   }
 }

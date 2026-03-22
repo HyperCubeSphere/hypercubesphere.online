@@ -15,7 +15,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t-3 border-accent mt-20">
-      <div className="px-6 md:px-12 py-10">
+      <div className="px-6 md:px-12 py-10 max-w-[1400px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div>
             <Link to="/$locale" params={{ locale }} className="font-mono font-extrabold text-base tracking-widest uppercase block mb-2">
@@ -31,17 +31,19 @@ export default function Footer() {
                 key={link.to}
                 to={link.to}
                 params={{ locale }}
-                className="font-mono text-xs uppercase tracking-wider text-muted-light dark:text-muted-dark hover:text-accent transition-[color] duration-200"
+                className="font-mono text-xs uppercase tracking-wider hover:text-accent transition-[color] duration-200"
+                activeProps={{ className: 'text-accent' }}
+                inactiveProps={{ className: 'text-muted-light dark:text-muted-dark' }}
               >
                 {link.label}
               </Link>
             ))}
           </div>
         </div>
-        <div className="border-t border-border-light dark:border-border-dark mt-8 pt-6">
-          <p className="font-mono text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider">
+        <div className="border-t-3 border-border-light dark:border-border-dark mt-8 pt-6">
+          <a href="mailto:info@hypercubesphere.online" className="font-mono text-xs text-muted-light dark:text-muted-dark uppercase tracking-wider hover:text-accent transition-[color] duration-200">
             info@hypercubesphere.online
-          </p>
+          </a>
         </div>
       </div>
     </footer>

@@ -17,28 +17,31 @@ function ContactPage() {
 
   return (
     <div>
-      <section className="px-6 md:px-12 py-16 md:py-24 border-b-3 border-border-light dark:border-border-dark">
-        <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">{c.eyebrow}</p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
-          {c.headingPre}<span className="accent-highlight">{c.headingBold}</span>
-        </h1>
-        <p className="font-mono text-sm text-muted-light dark:text-muted-dark max-w-xl leading-relaxed">{c.subtitle}</p>
+      <section className="border-b-3 border-border-light dark:border-border-dark">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
+          <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">{c.eyebrow}</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
+            {c.headingPre}<span className="accent-highlight">{c.headingBold}</span>
+          </h1>
+          <p className="text-sm text-muted-light dark:text-muted-dark max-w-xl leading-relaxed">{c.subtitle}</p>
+        </div>
       </section>
 
-      <section className="px-6 md:px-12 py-16">
+      <section className="py-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12">
-          <div>
+          <div className="order-2 lg:order-1">
             <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-6">{c.formEyebrow}</p>
             <ContactForm />
           </div>
-          <div>
+          <div className="order-1 lg:order-2">
             <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-6">{c.detailsEyebrow}</p>
             <div className="space-y-0">
               {c.info.map((info) => (
                 <div key={info.prefix} className="border-3 border-border-light dark:border-border-dark p-4 -mt-[3px] first:mt-0">
                   <p className="font-mono text-[11px] font-bold text-accent uppercase tracking-widest mb-1">// {info.prefix}</p>
                   <p className="font-bold text-xs uppercase tracking-wider mb-0.5">{info.label}</p>
-                  <p className="font-mono text-[12px] text-muted-dark">{info.value}</p>
+                  <p className="font-mono text-[12px] text-muted-light dark:text-muted-dark">{info.value}</p>
                 </div>
               ))}
             </div>
@@ -46,12 +49,13 @@ function ContactPage() {
               <p className="font-mono text-[11px] font-bold text-accent uppercase tracking-widest mb-3">{c.connectEyebrow}</p>
               <div className="space-y-1.5">
                 {c.socials.map((platform) => (
-                  <a key={platform.label} href={platform.href} target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-muted-dark hover:text-accent transition-[color] duration-200 block">
+                  <a key={platform.label} href={platform.href} target="_blank" rel="noopener noreferrer" className="font-mono text-[12px] text-muted-light dark:text-muted-dark hover:text-accent transition-[color] duration-200 block">
                     ■ {platform.label}
                   </a>
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>

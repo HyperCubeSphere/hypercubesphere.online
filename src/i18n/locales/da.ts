@@ -186,10 +186,10 @@ const da = {
     members: [
       { name: 'Alexandra Chen', role: 'CEO & Grundlægger', bio: 'Tidligere strategidirektør hos et Big Four-konsulentfirma. 15 års erfaring med at drive digital transformation for Fortune 500-virksomheder. Besat af at afstemme teknologiinvesteringer med forretningsmål.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'CTO', bio: 'Tidligere principal engineer hos en hyperscaler. Har bygget distribuerede systemer, der behandler 10M+ events/sek. Mener, at stor arkitektur er usynlig — man bemærker den kun, når den mangler.', initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'Leder af AI', bio: 'Ph.d. i Machine Learning fra ETH Zürich. Publiceret forsker inden for NLP og computer vision. Bygger bro mellem banebrydende forskning og produktionsklare AI-systemer.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'Leder af AI', bio: 'Ph.d. i Machine Learning fra ETH Zürich. Publiceret forsker inden for NLP og computer vision. Bygger bro mellem banebrydende forskning og produktionsklare AI-systemer.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Leder af Sikkerhed', bio: 'Tidligere statslig cybersikkerhedsanalytiker. CISSP-, OSCP-certificeret. Har ledet incident response for kritisk infrastruktur. Tænker som en angriber, bygger som en forsvarer.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Lead Engineer', bio: 'Full-stack-arkitekt med dyb ekspertise i cloud-native systemer. 10+ års erfaring med at shippe produktionskode på tværs af fintech og healthtech. Forkæmper for ren kode og pragmatisk ingeniørarbejde.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Leder af Drift', bio: 'PMP-certificeret med erfaring i at lede komplekse teknologiprogrammer på tværs af 3 kontinenter. Sikrer, at hvert projekt leveres til tiden, inden for budget og overgår forventningerne.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Leder af Drift', bio: 'PMP-certificeret med erfaring i at lede komplekse teknologiprogrammer på tværs af 3 kontinenter. Sikrer, at hvert projekt leveres til tiden, inden for budget og overgår forventningerne.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Karriere',
     careersTitle: 'Vil Du Være Med på Holdet?',

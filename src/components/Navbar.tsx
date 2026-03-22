@@ -16,8 +16,8 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className="border-b-3 border-accent bg-bg-light/90 dark:bg-bg-dark/90 backdrop-blur-sm sticky top-0 z-50">
-      <div className="flex items-center justify-between px-6 md:px-12 h-16">
+    <nav className="border-b-3 border-accent bg-bg-light dark:bg-bg-dark sticky top-0 z-50">
+      <div className="flex items-center justify-between px-6 md:px-12 h-16 max-w-[1400px] mx-auto w-full">
         <Link to="/$locale" params={{ locale }} className="font-mono font-extrabold text-lg tracking-widest uppercase">
           HYPER<span className="bg-accent text-white px-1.5">CUBE</span>SPHERE
         </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden font-mono text-xl p-2 cursor-pointer touch-manipulation"
+          className="md:hidden font-mono text-xl p-2 min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer touch-manipulation"
           aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={open}
         >
@@ -59,33 +59,35 @@ export default function Navbar() {
         </button>
       </div>
 
-      {open && (
-        <div className="md:hidden border-t-3 border-border-light dark:border-border-dark px-6 py-4 flex flex-col gap-2">
-          {navLinks.map((link) => (
+      <div className={`md:hidden grid transition-[grid-template-rows] duration-300 ease-out ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+        <div className="overflow-hidden">
+          <div className="border-t-3 border-border-light dark:border-border-dark px-6 py-4 flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                params={{ locale }}
+                onClick={() => setOpen(false)}
+                className="font-mono text-sm font-semibold uppercase tracking-wider py-3 min-h-[44px] border-b-2 border-border-light dark:border-border-dark transition-[color] duration-200 hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              key={link.to}
-              to={link.to}
+              to="/$locale/contact"
               params={{ locale }}
               onClick={() => setOpen(false)}
-              className="font-mono text-sm font-semibold uppercase tracking-wider py-2 border-b-2 border-border-light dark:border-border-dark transition-[color] duration-200 hover:text-accent"
+              className="font-mono text-sm font-bold uppercase tracking-wider py-3 min-h-[44px] bg-accent text-white text-center mt-2 flex items-center justify-center"
             >
-              {link.label}
+              {t.nav.contact}
             </Link>
-          ))}
-          <Link
-            to="/$locale/contact"
-            params={{ locale }}
-            onClick={() => setOpen(false)}
-            className="font-mono text-sm font-bold uppercase tracking-wider py-2 bg-accent text-white text-center mt-2"
-          >
-            {t.nav.contact}
-          </Link>
-          <div className="mt-2 flex items-center gap-2">
-            <ThemeToggle />
-            <LanguageSwitcher />
+            <div className="mt-2 flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   )
 }

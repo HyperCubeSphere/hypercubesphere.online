@@ -186,10 +186,10 @@ const cs = {
     members: [
       { name: 'Alexandra Chen', role: 'CEO a Zakladatelka', bio: 'Bývalá ředitelka strategie ve firmě Velké čtyřky. 15 let řízení digitální transformace pro společnosti Fortune 500. Posedlá propojením technologických investic s obchodními výsledky.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'CTO', bio: 'Bývalý principal engineer u hyperscalera. Budoval distribuované systémy zpracovávající 10M+ událostí/sek. Věří, že skvělá architektura je neviditelná — všimnete si jí teprve, když chybí.', initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'Vedoucí AI', bio: 'PhD ve strojovém učení z ETH Curych. Publikující výzkumnice v NLP a počítačovém vidění. Přemosťuje propast mezi špičkovým výzkumem a produkčně připravenými AI systémy.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'Vedoucí AI', bio: 'PhD ve strojovém učení z ETH Curych. Publikující výzkumnice v NLP a počítačovém vidění. Přemosťuje propast mezi špičkovým výzkumem a produkčně připravenými AI systémy.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Vedoucí Bezpečnosti', bio: 'Bývalý vládní analytik kybernetické bezpečnosti. Certifikace CISSP, OSCP. Vedl reakci na incidenty u kritické infrastruktury. Přemýšlí jako útočník, buduje jako obránce.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Vedoucí Inženýrka', bio: 'Full-stack architektka s hlubokou expertízou v cloud-native systémech. 10+ let dodávání produkčního kódu ve fintech a healthtech. Zastánkyně čistého kódu a pragmatického inženýrství.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Vedoucí Provozu', bio: 'PMP certifikovaný s praxí v řízení komplexních technologických programů na 3 kontinentech. Zajišťuje, že každý projekt je dodán včas, v rozpočtu a překonává očekávání.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Vedoucí Provozu', bio: 'PMP certifikovaný s praxí v řízení komplexních technologických programů na 3 kontinentech. Zajišťuje, že každý projekt je dodán včas, v rozpočtu a překonává očekávání.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Kariéra',
     careersTitle: 'Chcete Se Přidat K Týmu?',

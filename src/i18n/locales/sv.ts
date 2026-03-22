@@ -186,10 +186,10 @@ const sv = {
     members: [
       { name: 'Alexandra Chen', role: 'VD & Grundare', bio: 'Tidigare strategidirektör på en Big Four-konsultfirma. 15 års erfarenhet av att driva digital transformation för Fortune 500-företag. Besatt av att koppla teknikinvesteringar till affärsresultat.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'CTO', bio: "Tidigare principal engineer hos en hyperscaler. Byggde distribuerade system som bearbetar 10M+ händelser/sek. Anser att bra arkitektur är osynlig — man märker den bara när den saknas.", initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'Chef för AI', bio: 'Doktorsexamen i maskininlärning från ETH Zürich. Publicerad forskare inom NLP och datorseende. Bygger bron mellan banbrytande forskning och produktionsklara AI-system.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'Chef för AI', bio: 'Doktorsexamen i maskininlärning från ETH Zürich. Publicerad forskare inom NLP och datorseende. Bygger bron mellan banbrytande forskning och produktionsklara AI-system.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Chef för Säkerhet', bio: 'Tidigare statlig cybersäkerhetsanalytiker. CISSP, OSCP-certifierad. Ledde incidenthantering för kritisk infrastruktur. Tänker som en angripare, bygger som en försvarare.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Lead Engineer', bio: 'Full-stack-arkitekt med djup expertis inom molnbaserade system. 10+ år av att leverera produktionskod inom fintech och healthtech. Förespråkar ren kod och pragmatisk ingenjörskonst.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Chef för Drift', bio: 'PMP-certifierad med erfarenhet av att hantera komplexa teknikprogram över 3 kontinenter. Säkerställer att varje projekt levereras i tid, inom budget och överträffar förväntningarna.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Chef för Drift', bio: 'PMP-certifierad med erfarenhet av att hantera komplexa teknikprogram över 3 kontinenter. Säkerställer att varje projekt levereras i tid, inom budget och överträffar förväntningarna.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Karriär',
     careersTitle: 'Vill Du Gå Med i Teamet?',

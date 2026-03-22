@@ -186,10 +186,10 @@ const en = {
     members: [
       { name: 'Alexandra Chen', role: 'CEO & Founder', bio: 'Former strategy director at a Big Four consultancy. 15 years driving digital transformation for Fortune 500 companies. Obsessed with aligning technology investments to business outcomes.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'CTO', bio: "Ex-principal engineer at a hyperscaler. Built distributed systems processing 10M+ events/sec. Believes great architecture is invisible — you only notice it when it's missing.", initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'Head of AI', bio: 'PhD in Machine Learning from ETH Zurich. Published researcher in NLP and computer vision. Bridges the gap between cutting-edge research and production-ready AI systems.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'Head of AI', bio: 'PhD in Machine Learning from ETH Zurich. Published researcher in NLP and computer vision. Bridges the gap between cutting-edge research and production-ready AI systems.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Head of Security', bio: 'Former government cybersecurity analyst. CISSP, OSCP certified. Led incident response for critical infrastructure. Thinks like an attacker, builds like a defender.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Lead Engineer', bio: 'Full-stack architect with deep expertise in cloud-native systems. 10+ years shipping production code across fintech and healthtech. Champions clean code and pragmatic engineering.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Head of Operations', bio: 'PMP certified with experience managing complex technology programs across 3 continents. Ensures every project ships on time, on budget, and exceeds expectations.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Head of Operations', bio: 'PMP certified with experience managing complex technology programs across 3 continents. Ensures every project ships on time, on budget, and exceeds expectations.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Careers',
     careersTitle: 'Want to Join the Team?',

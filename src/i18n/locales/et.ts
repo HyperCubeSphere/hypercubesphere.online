@@ -186,10 +186,10 @@ const et = {
     members: [
       { name: 'Alexandra Chen', role: 'Tegevjuht ja Asutaja', bio: 'Endine strateegiajuht Suure Nelja konsultatsioonifirmas. 15 aastat Fortune 500 ettevõtete digitaalse transformatsiooni juhtimist. Pühendunud tehnoloogiainvesteeringute ja äritulemuste kooskõlastamisele.', initials: 'AC', color: 'bg-accent' },
       { name: 'Marcus Okonkwo', role: 'Tehnikajuht', bio: 'Endine peainsener hüperskaleeritavas ettevõttes. Ehitanud hajussüsteeme, mis töötlevad 10M+ sündmust/sek. Usub, et suurepärane arhitektuur on nähtamatu — seda märkate ainult siis, kui see puudub.', initials: 'MO', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'Dr. Priya Sharma', role: 'AI Juht', bio: 'Masinõppe doktorikraad ETH Zürichist. Publitseeritud teadlane NLP ja masinnägemise valdkonnas. Sillutab teed tipptasemel teaduse ja tootmisvalmis AI-süsteemide vahel.', initials: 'PS', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'Dr. Priya Sharma', role: 'AI Juht', bio: 'Masinõppe doktorikraad ETH Zürichist. Publitseeritud teadlane NLP ja masinnägemise valdkonnas. Sillutab teed tipptasemel teaduse ja tootmisvalmis AI-süsteemide vahel.', initials: 'PS', color: 'bg-accent-tint border border-accent/30' },
       { name: 'James Thornton', role: 'Turvajuht', bio: 'Endine valitsuse küberturbeanalüütik. CISSP, OSCP sertifikaadiga. Juhtinud kriitilise taristu intsidentidele reageerimist. Mõtleb nagu ründaja, ehitab nagu kaitsja.', initials: 'JT', color: 'bg-accent' },
       { name: 'Elena Vasquez', role: 'Juhtiv Insener', bio: 'Täispinu arhitekt sügava ekspertiisiga pilvepõhistes süsteemides. 10+ aastat tootmiskoodi tarnimine fintech- ja healthtech-sektorites. Esindab puhast koodi ja pragmaatilist inseneriat.', initials: 'EV', color: 'bg-[#0f0f18] border border-accent' },
-      { name: 'David Kim', role: 'Operatsioonijuht', bio: 'PMP sertifikaadiga kogemus keeruliste tehnoloogiaprogrammide juhtimisel 3 kontinendil. Tagab, et iga projekt tarnitakse õigeaegselt, eelarves ja ületab ootusi.', initials: 'DK', color: 'bg-teal-tint border border-accent/30' },
+      { name: 'David Kim', role: 'Operatsioonijuht', bio: 'PMP sertifikaadiga kogemus keeruliste tehnoloogiaprogrammide juhtimisel 3 kontinendil. Tagab, et iga projekt tarnitakse õigeaegselt, eelarves ja ületab ootusi.', initials: 'DK', color: 'bg-accent-tint border border-accent/30' },
     ],
     careersEyebrow: '// Karjäär',
     careersTitle: 'Soovid Meeskonnaga Liituda?',

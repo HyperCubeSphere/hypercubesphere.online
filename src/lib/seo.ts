@@ -50,10 +50,10 @@ export function seo(config: SeoConfig) {
     { rel: 'canonical', href: url },
     ...locales.map((l) => ({
       rel: 'alternate',
-      hreflang: l,
+      hrefLang: l,
       href: `${SITE_URL}/${l}${path}`,
     })),
-    { rel: 'alternate', hreflang: 'x-default', href: `${SITE_URL}/en${path}` },
+    { rel: 'alternate', hrefLang: 'x-default', href: `${SITE_URL}/en${path}` },
   ]
 
   const result: {

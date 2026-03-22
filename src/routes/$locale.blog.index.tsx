@@ -17,29 +17,33 @@ function BlogPage() {
 
   return (
     <div>
-      <section className="px-6 md:px-12 py-16 md:py-24 border-b-3 border-border-light dark:border-border-dark">
-        <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">{b.eyebrow}</p>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
-          {b.headingPre}<span className="accent-highlight">{b.headingBold}</span>
-        </h1>
-        <p className="font-mono text-sm text-muted-light dark:text-muted-dark max-w-xl leading-relaxed">{b.subtitle}</p>
+      <section className="border-b-3 border-border-light dark:border-border-dark">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-16 md:py-24">
+          <p className="font-mono text-xs font-bold uppercase tracking-[3px] text-accent mb-4">{b.eyebrow}</p>
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6 max-w-2xl text-balance">
+            {b.headingPre}<span className="accent-highlight">{b.headingBold}</span>
+          </h1>
+          <p className="text-sm text-muted-light dark:text-muted-dark max-w-xl leading-relaxed">{b.subtitle}</p>
+        </div>
       </section>
 
-      <section className="px-6 md:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
-          {b.posts.map((post) => (
-            <div key={post.slug} className="-m-[1.5px]">
-              <BlogCard
-                slug={post.slug}
-                title={post.title}
-                date={new Date(post.dateISO).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}
-                excerpt={post.excerpt}
-                category={post.category}
-                readTime={post.readTime}
-                locale={locale}
-              />
-            </div>
-          ))}
+      <section className="py-16">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+            {b.posts.map((post) => (
+              <div key={post.slug} className="-m-[1.5px]">
+                <BlogCard
+                  slug={post.slug}
+                  title={post.title}
+                  date={new Date(post.dateISO).toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' })}
+                  excerpt={post.excerpt}
+                  category={post.category}
+                  readTime={post.readTime}
+                  locale={locale}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
