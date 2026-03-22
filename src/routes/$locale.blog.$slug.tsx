@@ -2,6 +2,8 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useI18n } from '../i18n'
 import { seo } from '../lib/seo'
 import { getTranslation } from '../i18n/translations'
+import { getBlogMarkdown } from '../lib/blog'
+import { parseMarkdown } from '../lib/markdown'
 
 export const Route = createFileRoute('/$locale/blog/$slug')({
   component: BlogPostPage,
@@ -29,7 +31,6 @@ export const Route = createFileRoute('/$locale/blog/$slug')({
           datePublished: post.dateISO,
           dateModified: post.dateISO,
           articleSection: post.category,
-          wordCount: post.content.split(/\s+/).length,
           author: {
             '@type': 'Organization',
             name: 'HyperCubeSphere',
@@ -48,11 +49,20 @@ export const Route = createFileRoute('/$locale/blog/$slug')({
       }),
     }
   },
+  loader: async ({ params }) => {
+    const markdown = getBlogMarkdown(params.slug, params.locale)
+    if (markdown) {
+      const html = await parseMarkdown(markdown)
+      return { html }
+    }
+    return { html: null }
+  },
 })
 
 function BlogPostPage() {
   const { locale, t } = useI18n()
   const { slug } = Route.useParams()
+  const { html } = Route.useLoaderData()
   const post = t.blog.posts.find((p) => p.slug === slug)
 
   if (!post) {
@@ -83,11 +93,15 @@ function BlogPostPage() {
 
       <section className="py-16">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="max-w-3xl space-y-6">
-            {post.content.split('\n\n').map((paragraph, i) => (
-              <p key={i} className="text-[15px] leading-7 text-muted-light dark:text-muted-dark">{paragraph}</p>
-            ))}
-          </div>
+          {html ? (
+            <div className="prose max-w-3xl" dangerouslySetInnerHTML={{ __html: html }} />
+          ) : (
+            <div className="max-w-3xl space-y-6">
+              {post.content.split('\n\n').map((paragraph, i) => (
+                <p key={i} className="text-[15px] leading-7 text-muted-light dark:text-muted-dark">{paragraph}</p>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

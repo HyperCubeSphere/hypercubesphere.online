@@ -212,7 +212,7 @@ const en = {
         dateISO: '2026-03-08',
         excerpt: 'How machine learning models are transforming SOC operations, threat detection, and incident response in real-time.',
         category: 'AI',
-        readTime: '7 min read',
+        readTime: '10 min read',
         content: `The convergence of artificial intelligence and cybersecurity is creating a paradigm shift in how organizations defend their digital assets. Traditional SOC operations — reliant on human analysts sifting through thousands of alerts — are being augmented and in some cases replaced by ML-driven systems that can detect, classify, and respond to threats in milliseconds.
 
 At HyperCubeSphere, we've deployed AI security systems for clients in financial services and defense that reduced mean time to detection (MTTD) by 85% and false positive rates by 60%. The key isn't replacing human analysts, but amplifying their capabilities.
@@ -227,7 +227,7 @@ Looking ahead, we expect to see AI systems that can autonomously contain threats
         dateISO: '2026-02-22',
         excerpt: 'Moving beyond the buzzword — a step-by-step approach to implementing zero-trust in enterprise environments.',
         category: 'Security',
-        readTime: '10 min read',
+        readTime: '11 min read',
         content: `Zero-trust isn't a product you buy — it's an architecture philosophy you adopt. The core principle is simple: never trust, always verify. Every request, every user, every device must prove its identity and authorization before accessing any resource.
 
 Implementing zero-trust in a brownfield enterprise environment requires a phased approach. Start with identity: ensure strong authentication (MFA everywhere), implement least-privilege access controls, and establish a robust identity governance framework.
@@ -244,7 +244,7 @@ Finally, implement continuous monitoring and analytics. Zero-trust isn't a one-t
         dateISO: '2026-02-10',
         excerpt: 'A deep dive into event-driven architectures, stream processing, and the modern data stack for real-time analytics.',
         category: 'Data',
-        readTime: '8 min read',
+        readTime: '13 min read',
         content: `The modern data stack has evolved dramatically. Batch processing is no longer sufficient for organizations that need real-time insights. Event-driven architectures using tools like Apache Kafka, Apache Flink, and modern stream processors enable continuous data flow from source to insight.
 
 The key architectural decision is choosing between lambda architecture (batch + stream) and kappa architecture (stream-only). For most modern use cases, we recommend a kappa approach with tools like Apache Kafka as the central event bus, combined with a stream processor for real-time transformations.
@@ -259,7 +259,7 @@ For the analytics layer, the combination of a cloud data warehouse (Snowflake, B
         dateISO: '2026-01-28',
         excerpt: 'How to make architecture decisions that scale with your business without over-engineering from day one.',
         category: 'Software',
-        readTime: '6 min read',
+        readTime: '10 min read',
         content: `The biggest mistake growing startups make isn't choosing the wrong technology — it's making irreversible architecture decisions too early. At the seed stage, your architecture should optimize for iteration speed and learning. At Series A, it should optimize for reliability and team scaling. At Series B+, it should optimize for operational efficiency and multi-team development.
 
 Start with a modular monolith. It gives you the deployment simplicity of a monolith with the logical separation of microservices. When a module needs to scale independently or be owned by a separate team, extract it. Not before.
@@ -274,7 +274,7 @@ Make technology choices that your team can actually maintain. The best architect
         dateISO: '2026-01-15',
         excerpt: 'Real-world strategies for reducing cloud spend by 30-50% without sacrificing performance or reliability.',
         category: 'Cloud',
-        readTime: '9 min read',
+        readTime: '10 min read',
         content: `After helping 50+ organizations migrate to and optimize their cloud infrastructure, we've identified patterns that consistently reduce costs by 30-50% without sacrificing performance. The biggest wins rarely come from negotiating better rates — they come from architectural changes.
 
 Right-sizing is the lowest-hanging fruit. Most organizations over-provision by 40-60%. Use cloud provider tools to identify underutilized instances, and implement auto-scaling policies that match your actual usage patterns. Graviton/ARM instances offer 20-30% cost savings for most workloads.
@@ -291,7 +291,7 @@ The most impactful change is architectural: redesigning applications to be cloud
         dateISO: '2026-01-03',
         excerpt: "AI is no longer optional. Here's how to build a pragmatic AI strategy that delivers value, not just demos.",
         category: 'Strategy',
-        readTime: '5 min read',
+        readTime: '13 min read',
         content: `The question is no longer whether your organization should adopt AI — it's whether you'll do it strategically or reactively. Companies without an AI strategy aren't just missing opportunities; they're accumulating technical debt as competitors gain compounding advantages.
 
 A pragmatic AI strategy starts with business problems, not technology. Identify the top 5 processes where AI could have the highest impact, assess data readiness for each, and prioritize based on a combination of business value and implementation feasibility.
